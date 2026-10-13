@@ -15,5 +15,35 @@ const projects=()=>`${banner('Projects & Capabilities','Explore the technical fo
 const insights=()=>`${banner('Insights','Practical perspectives on transformer care, testing and electrical asset reliability.')}<section class="section"><div class="container">${label('ENGINEERING KNOWLEDGE')}<div class="service-grid">${[['Why transformer oil condition matters','Moisture, dissolved gases and contaminants can provide useful indicators of insulation health.'],['The value of preventive maintenance','Structured inspection and condition monitoring can help identify deterioration before major failures.'],['Testing before energisation','Pre-commissioning tests and protection checks help establish equipment condition before service.']].map(x=>`<article class="insight-card"><span class="overline">TECHNICAL OVERVIEW</span><h3>${x[0]}</h3><p>${x[1]}</p><a href="#contact">Discuss with our team ↗</a></article>`).join('')}</div><p style="font-size:13px;margin-top:28px">These are educational summaries, not published news reports or substitutes for site-specific engineering assessment.</p></div></section>${callout()}`;
 const contact=()=>`${banner('Contact Us','Talk to our team about your transformer, electrical maintenance or engineering requirements.')}<section class="section"><div class="container contact-grid"><div>${label('LET’S TALK POWER')}<h2>Tell us what your<br>assets need.</h2><p>Whether you need diagnostic assessment, oil filtration, preventive maintenance, repair or commissioning support, we welcome the opportunity to discuss your requirements.</p><h3>Call us</h3><p><a href="tel:+2349163505000">+234 916 350 5000</a></p><h3>Email us</h3><p><a href="mailto:brainboxenergyservicesltd@gmail.com">brainboxenergyservicesltd@gmail.com</a></p><h3>Visit us</h3><p>Rotimi Amaechi Centre for Advanced Manufacturing (RACAM), Rivers State University, Port Harcourt, Nigeria.</p></div><form class="contact-form" id="contact-form"><h3>Send an enquiry</h3><label for="name">Full name *</label><input id="name" name="name" required><label for="email">Email address *</label><input id="email" type="email" name="email" required><label for="service">Service required</label><select id="service" name="service"><option>General enquiry</option>${services.map(s=>`<option>${s[0]}</option>`).join('')}</select><label for="message">Project details *</label><textarea id="message" name="message" required placeholder="Describe your asset, location and support needed"></textarea><button class="btn dark" type="submit">PREPARE EMAIL ENQUIRY ↗</button><p class="notice">This opens your email application. No information is stored on this website.</p></form></div></section>`;
 const pages={home,about,services:servicePage,projects,insights,contact};
-function render(){let route=location.hash.slice(1).split('/')[0]||'home';if(!pages[route])route='home';document.getElementById('app').innerHTML=pages[route]();document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+route));document.title=(route==='home'?'Powering Reliability':route[0].toUpperCase()+route.slice(1))+' | Brainbox Energy Services Limited';document.getElementById('nav').classList.remove('open');document.getElementById('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);const form=document.getElementById('contact-form');if(form)form.addEventListener('submit',e=>{e.preventDefault();let d=new FormData(form);let body=`Name: ${d.get('name')}\nEmail: ${d.get('email')}\nService: ${d.get('service')}\n\n${d.get('message')}`;location.href='mailto:brainboxenergyservicesltd@gmail.com?subject='+encodeURIComponent('Website enquiry — '+d.get('service'))+'&body='+encodeURIComponent(body)})}
-document.getElementById('menu').onclick=()=>{let n=document.getElementById('nav');n.classList.toggle('open');document.getElementById('menu').setAttribute('aria-expanded',String(n.classList.contains('open')))};document.getElementById('year').textContent=new Date().getFullYear();addEventListener('hashchange',render);render();
+function render(){let route=location.hash.slice(1).split('/')[0]||'home';if(!pages[route])route='home';document.getElementById('app').innerHTML=pages[route]();document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+route));document.title=(route==='home'?'Powering Reliability':route[0].toUpperCase()+route.slice(1))+' | Brainbox Energy Services Limited';closeMenu(false);window.scrollTo(0,0);const form=document.getElementById('contact-form');if(form)form.addEventListener('submit',e=>{e.preventDefault();let d=new FormData(form);let body=`Name: ${d.get('name')}\nEmail: ${d.get('email')}\nService: ${d.get('service')}\n\n${d.get('message')}`;location.href='mailto:brainboxenergyservicesltd@gmail.com?subject='+encodeURIComponent('Website enquiry — '+d.get('service'))+'&body='+encodeURIComponent(body)})}
+const menuButton=document.getElementById('menu');
+const mobileNav=document.getElementById('nav');
+const header=document.getElementById('header');
+function closeMenu(returnFocus=false){
+  mobileNav.classList.remove('open');
+  header.classList.remove('menu-open');
+  document.body.classList.remove('nav-locked');
+  menuButton.setAttribute('aria-expanded','false');
+  menuButton.setAttribute('aria-label','Open navigation');
+  if(returnFocus)menuButton.focus();
+}
+menuButton.addEventListener('click',()=>{
+  const opening=!mobileNav.classList.contains('open');
+  mobileNav.classList.toggle('open',opening);
+  header.classList.toggle('menu-open',opening);
+  document.body.classList.toggle('nav-locked',opening);
+  menuButton.setAttribute('aria-expanded',String(opening));
+  menuButton.setAttribute('aria-label',opening?'Close navigation':'Open navigation');
+});
+mobileNav.addEventListener('click',event=>{
+  if(event.target.closest('a'))closeMenu();
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&mobileNav.classList.contains('open'))closeMenu(true);
+});
+window.addEventListener('resize',()=>{
+  if(window.innerWidth>1120&&mobileNav.classList.contains('open'))closeMenu();
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+addEventListener('hashchange',render);
+render();
