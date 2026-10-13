@@ -1,1 +1,32 @@
-# brainbox-energy
+# Brainbox Energy Services Limited — Corporate Website
+
+Responsive HTML, CSS and JavaScript website for Brainbox Energy Services Limited.
+
+## Files
+
+- `index.html`: page shell, navigation and footer
+- `style.css`: responsive branding and layout; desktop navigation links increased to **14px**
+- `script.js`: Home, About, Services, Capabilities, Insights, Contact and enquiry interaction
+- `assets/`: logo and technical photography **still to be uploaded to this repository**
+
+## Complete asset package
+
+The accompanying `brainbox-energy-website-v1.1.zip` download supplied in the ChatGPT conversation includes the original `assets/` folder and the updated navigation CSS. Upload the `assets` directory from that ZIP to the repository root to complete the GitHub-hosted version.
+
+### Required files
+
+`assets/logo.png`, `assets/profile-0.jpg`, `assets/profile-18.jpg`, `assets/profile-13.jpg`, `assets/profile-19.jpg`, `assets/profile-9.jpg`, `assets/profile-22.png`
+
+Additional image files may be kept in `assets/` for future use.
+
+## Preview
+
+After uploading the assets, open `index.html` locally or enable GitHub Pages from the main branch (root folder).
+
+## Contact enquiries
+
+The enquiry form creates a mailto draft in the visitor's email app. It does not use a server or store form submissions.
+
+## Attribution
+
+Technical photographs and content come from the official company profile. Technical experience belonging to parent company Brainbox Matrix Services Limited must not be attributed to BESL as its own completed client projects.
