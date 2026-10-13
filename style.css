@@ -80,38 +80,24 @@ footer{background:#08182c;color:#fff;padding:65px 6% 20px;display:grid;grid-temp
   #nav,#nav a,#menu .menu-line{transition:none!important;animation:none!important}
 }
 
-/* Header: show the official logo alone, at a more prominent size. */
-#header .brand{flex:0 0 auto;gap:0;line-height:0}
-#header .brand img{display:block;width:118px;height:72px;max-width:100%;object-fit:contain}
-@media(max-width:700px){
-  #header{height:78px}
-  #header .brand img{width:100px;height:66px}
-  #nav{padding-top:calc(94px + env(safe-area-inset-top))}
-}
 
-/* The supplied logo is a square image with generous built-in white margins.
-   Render its full image larger inside a clipped header footprint, so that the
-   actual BRAINBOX artwork becomes substantially more prominent. */
-#header{height:108px}
-#header .brand{width:172px;height:108px;overflow:hidden;justify-content:center;flex-shrink:0}
-#header .brand img{width:158px;height:158px;max-width:none;flex-shrink:0;object-fit:contain}
+/* Final unified responsive logo layout — one rendered image via <picture>. */
+#header{height:100px}
+#header .brand{flex:0 0 152px;width:152px;height:100px;display:flex;align-items:center;
+  justify-content:center;overflow:hidden;line-height:0}
+#header .brand .brand-picture{display:flex;align-items:center;justify-content:center;
+  width:152px;height:100px;flex:0 0 152px}
+#header .brand .brand-picture img{display:block;width:130px;height:130px;
+  max-width:none;object-fit:contain;flex:none}
 @media(max-width:1120px){
-  #header.menu-open .brand img{background:transparent;border-radius:0}
+  #header.menu-open .brand .brand-picture img{background:transparent;border-radius:0}
 }
-@media(max-width:700px){
-  #header{height:92px}
-  #header .brand{width:152px;height:92px}
-  #header .brand img{width:145px;height:145px}
-}
-
-/* Responsive brand: complete wordmark on desktop, scalable symbol on mobile. */
-#header .brand .brand-full{display:block}
-#header .brand .brand-symbol{display:none}
 @media(max-width:700px){
   #header{height:76px}
-  #header .brand{width:70px;height:76px;overflow:visible;justify-content:flex-start}
-  #header .brand .brand-full{display:none}
-  #header .brand .brand-symbol{display:block;width:58px;height:62px;max-width:none;object-fit:contain}
-  #header.menu-open .brand .brand-symbol{filter:brightness(0) invert(1);background:transparent}
+  #header .brand{width:66px;height:76px;flex-basis:66px;overflow:visible;justify-content:flex-start}
+  #header .brand .brand-picture{width:60px;height:76px;flex-basis:60px}
+  #header .brand .brand-picture img{width:55px;height:58px;max-width:none;
+    object-fit:contain;filter:none}
+  #header.menu-open .brand .brand-picture img{filter:brightness(0) invert(1)}
   #nav{padding-top:calc(88px + env(safe-area-inset-top))}
 }
