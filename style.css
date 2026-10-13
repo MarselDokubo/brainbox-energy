@@ -103,3 +103,15 @@ footer{background:#08182c;color:#fff;padding:65px 6% 20px;display:grid;grid-temp
   #header .brand{width:152px;height:92px}
   #header .brand img{width:145px;height:145px}
 }
+
+/* Responsive brand: complete wordmark on desktop, scalable symbol on mobile. */
+#header .brand .brand-full{display:block}
+#header .brand .brand-symbol{display:none}
+@media(max-width:700px){
+  #header{height:76px}
+  #header .brand{width:70px;height:76px;overflow:visible;justify-content:flex-start}
+  #header .brand .brand-full{display:none}
+  #header .brand .brand-symbol{display:block;width:58px;height:62px;max-width:none;object-fit:contain}
+  #header.menu-open .brand .brand-symbol{filter:brightness(0) invert(1);background:transparent}
+  #nav{padding-top:calc(88px + env(safe-area-inset-top))}
+}
