@@ -30,3 +30,12 @@ The enquiry form creates a mailto draft in the visitor's email app. It does not 
 ## Attribution
 
 Technical photographs and content come from the official company profile. Technical experience belonging to parent company Brainbox Matrix Services Limited must not be attributed to BESL as its own completed client projects.
+
+
+## Content update — v5 alignment (October 2026)
+
+The main site retains the original Brainbox UI while incorporating the reviewed colleague v5 content: ten engineering services, procurement capability summaries, structured execution, technical guidance, a dedicated `#quote` page, and a separate `#contact` general enquiry form.
+
+The colleague's separate `capability-statement.pdf` is **not yet deployed** to GitHub; the site links to the capabilities overview and invites users to request supporting documents instead. The submission forms currently prepare emails using the visitor's email application; there is no hosted form backend.
+
+All photographs in the original site remain illustrative of company-profile technical activity, not verified named client case studies. No new certification or client endorsement claims have been introduced.
