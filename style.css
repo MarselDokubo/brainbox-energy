@@ -111,3 +111,16 @@ footer{background:#08182c;color:#fff;padding:65px 6% 20px;display:grid;grid-temp
 .card-note .btn{margin-top:10px}
 .contact-form button{width:100%;min-height:48px}
 @media(max-width:700px){.contact-form{padding:23px}.service-card{min-height:auto;padding:26px}.service-card h3{margin-top:23px}}
+
+/* Workshop media and context-aware enquiry form additions */
+.workshop-gallery{gap:18px}
+.workshop-gallery figure{background:#f7f8fa;min-width:0}
+.workshop-gallery img{height:280px;object-fit:cover}
+.workshop-gallery figcaption{line-height:1.5}
+.workshop-gallery figcaption small{font-size:10px;color:#ad7817;letter-spacing:.11em;text-transform:uppercase;font-weight:800}
+.conditional-enquiry-fields{border-top:1px solid #e3e8ef;margin:6px 0 20px;padding-top:12px}
+.conditional-enquiry-fields:empty{display:none}
+.conditional-fields-heading{font-size:13px;font-weight:800;color:#071d39;margin:8px 0 20px}
+.conditional-enquiry-fields label{line-height:1.5}
+.conditional-enquiry-fields input,.conditional-enquiry-fields select,.conditional-enquiry-fields textarea{max-width:100%}
+@media(max-width:700px){.workshop-gallery img{height:230px}}
