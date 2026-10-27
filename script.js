@@ -122,7 +122,7 @@ const enquiryBenefits=()=>`<div class="contact-benefits"><div class="benefits-ey
 const contact=()=>`${banner('Contact Us','Have a question or a project in mind? Get in touch with the Brainbox Energy team.')}
 <section class="section"><div class="container modern-contact">
  <div class="contact-intro">${label('LET’S CONNECT')}<h2>Power starts<br>with a conversation.</h2><p>Whether it's a maintenance request, technical enquiry or potential partnership, tell us what you need and we'll help identify the next step.</p>
- <div class="contact-details"><div><span>CALL US</span><a href="tel:+2349163505000">+234 916 350 5000</a></div><div><span>EMAIL US</span><a href="mailto:brainboxenergyservicesltd@gmail.com">brainboxenergyservicesltd@gmail.com</a></div><div><span>VISIT US</span><p>RACAM, Rivers State University, Port Harcourt, Nigeria.</p></div>${enquiryBenefits()}</div>
+ <div class="contact-details"><div><span>CALL US</span><a href="tel:+2349163505000">+234 916 350 5000</a></div><div><span>EMAIL US</span><a href="mailto:brainboxenergyservicesltd@gmail.com">brainboxenergyservicesltd@gmail.com</a></div><div><span>VISIT US</span><p>RACAM, Rivers State University, Port Harcourt, Nigeria.</p></div></div>${enquiryBenefits()}</div>
  ${wizardMarkup('contact')}</div></section>`;
 const quote=()=>`${banner('Request a Quote','Share the essentials of your engineering requirement in three simple steps.')}
 <section class="section"><div class="container modern-contact">
