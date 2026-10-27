@@ -13,7 +13,7 @@ const newWorkshopGallery=[
 ['workshop-inspection-testing.webp','Electrical equipment inspection','Testing'],
 ['workshop-coil-winding.webp','Transformer coil winding activity','Winding']
 ];
-const workshopPhotos=()=>`<div class="image-grid workshop-gallery">${newWorkshopGallery.map(g=>`<figure class="workshop-item" hidden><img loading="lazy" decoding="async" src="${A+g[0]}" alt="${g[1]}"><figcaption><small>${g[2]}</small><br>${g[1]}</figcaption></figure>`).join('')}</div><div class="gallery-empty" hidden>New workshop photographs are being prepared for publication.</div><p class="notice">Actual workshop and equipment photographs. Some equipment labels remain general until confirmed.</p>`;
+const workshopPhotos=()=>`<div class="image-grid workshop-gallery">${newWorkshopGallery.map(g=>`<figure class="workshop-item" hidden><img loading="eager" decoding="async" src="${A+g[0]}" alt="${g[1]}"><figcaption><small>${g[2]}</small><br>${g[1]}</figcaption></figure>`).join('')}</div><div class="gallery-empty" hidden>New workshop photographs are being prepared for publication.</div><p class="notice">Actual workshop and equipment photographs. Some equipment labels remain general until confirmed.</p>`;
 function initWorkshopGallery(){
  document.querySelectorAll('.workshop-gallery').forEach(gallery=>{
   const frames=[...gallery.querySelectorAll('figure')];
