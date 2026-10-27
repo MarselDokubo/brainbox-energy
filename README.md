@@ -39,3 +39,19 @@ The main site retains the original Brainbox UI while incorporating the reviewed 
 The colleague's separate `capability-statement.pdf` is **not yet deployed** to GitHub; the site links to the capabilities overview and invites users to request supporting documents instead. The submission forms currently prepare emails using the visitor's email application; there is no hosted form backend.
 
 All photographs in the original site remain illustrative of company-profile technical activity, not verified named client case studies. No new certification or client endorsement claims have been introduced.
+
+
+## Workshop photography update (October 2026)
+
+The homepage and Capabilities page have a new workshop photo gallery. Ten optimized WebP files are prepared in the companion `brainbox-workshop-assets.zip` archive in the ChatGPT conversation, under `assets/`. **The binary WebP files are not yet present in this GitHub repository.** Extract the archive at the project root (merging its `assets/` folder with the existing one) and commit and push the images:
+
+```bash
+unzip brainbox-workshop-assets.zip
+git add assets/workshop-*.webp
+git commit -m "Add workshop and equipment photography"
+git push origin main
+```
+
+The gallery has an existing-photo fallback so an unavailable file does not show a broken-image icon while image deployment is pending. Machine descriptions are conservative until technical equipment names are confirmed.
+
+Both `#contact` and `#quote` now offer an enquiry-type selector and render scenario-specific required questions. Enquiries still open the visitor's mail client; there is no backend. For a production workflow, implement a secured server-side form endpoint.
