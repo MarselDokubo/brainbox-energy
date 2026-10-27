@@ -301,3 +301,11 @@ footer{background:#08182c;color:#fff;padding:65px 6% 20px;display:grid;grid-temp
 .workshop-item:hover{transform:none!important}
 @media(max-width:900px){.workshop-gallery figure.workshop-item,.workshop-gallery figure.workshop-item:first-child,.workshop-gallery figure.workshop-item:nth-child(2){grid-column:span 6}.workshop-gallery img,.workshop-gallery figure:first-child img,.workshop-gallery figure:nth-child(2) img{height:230px;border-radius:0 34px 0 0}}
 @media(max-width:580px){.workshop-gallery figure.workshop-item,.workshop-gallery figure.workshop-item:first-child,.workshop-gallery figure.workshop-item:nth-child(2){grid-column:span 12}.workshop-gallery img,.workshop-gallery figure:first-child img,.workshop-gallery figure:nth-child(2) img{height:260px;border-radius:0 42px 0 0}}
+
+/* Make the original six-image evidence grid equally restrained and photo-led. */
+.image-grid:not(.workshop-gallery){gap:26px 20px;background:transparent;border:0;grid-template-columns:repeat(3,minmax(0,1fr))}
+.image-grid:not(.workshop-gallery) figure{background:transparent;overflow:visible}
+.image-grid:not(.workshop-gallery) img{height:255px;object-fit:cover;border-radius:0 35px 0 0}
+.image-grid:not(.workshop-gallery) figcaption{padding:13px 0 0;background:transparent;font-size:13px;font-weight:650;color:#253240;line-height:1.5}
+@media(max-width:900px){.image-grid:not(.workshop-gallery){grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.image-grid:not(.workshop-gallery){grid-template-columns:1fr}.image-grid:not(.workshop-gallery) img{height:265px}}
