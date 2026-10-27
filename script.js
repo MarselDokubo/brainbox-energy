@@ -4,16 +4,29 @@ const gallery=[['profile-0.jpg','Transformer maintenance and testing'],['profile
 const newWorkshopGallery=[
 ['workshop-transformer-lifting.webp','Transformer lifting and handling','Lifting'],
 ['workshop-lifting-team.webp','Workshop lifting team and rigging','Lifting'],
-['workshop-transformer-inspection.webp','Transformer inspection and preparation','Transformer'],
+['workshop-transformer-inspection.webp','Transformer inspection and preparation','Inspection'],
 ['workshop-oil-filtration-unit.webp','Transformer oil filtration unit','Oil treatment'],
-['workshop-oil-filtration-equipment.webp','Filtration and oil treatment equipment','Oil treatment'],
-['workshop-industrial-heating.webp','Industrial workshop heating equipment','Workshop'],
-['workshop-heating-operation.webp','Workshop heating equipment operation','Workshop'],
+['workshop-oil-filtration-equipment.webp','Oil treatment equipment','Oil treatment'],
+['workshop-industrial-heating.webp','Industrial workshop equipment','Equipment'],
+['workshop-heating-operation.webp','Workshop equipment operation','Equipment'],
 ['workshop-exciter-and-testing.webp','Transformer testing and technical checks','Testing'],
 ['workshop-inspection-testing.webp','Electrical equipment inspection','Testing'],
 ['workshop-coil-winding.webp','Transformer coil winding activity','Winding']
 ];
-const workshopPhotos=()=>`<div class="image-grid workshop-gallery">${newWorkshopGallery.map((g,i)=>`<figure><img loading="lazy" decoding="async" src="${A+g[0]}" onerror="this.onerror=null;this.src='${A}profile-0.jpg'" alt="${g[1]}"><figcaption><small>${g[2]}</small><br>${g[1]}</figcaption></figure>`).join('')}</div><p class="notice">Workshop and equipment photographs provided by Brainbox. The specific model and function of some equipment require final technical confirmation before detailed publication.</p>`;
+const workshopPhotos=()=>`<div class="image-grid workshop-gallery">${newWorkshopGallery.map(g=>`<figure class="workshop-item" hidden><img loading="lazy" decoding="async" src="${A+g[0]}" alt="${g[1]}"><figcaption><small>${g[2]}</small><br>${g[1]}</figcaption></figure>`).join('')}</div><div class="gallery-empty" hidden>New workshop photographs are being prepared for publication.</div><p class="notice">Actual workshop and equipment photographs. Some equipment labels remain general until confirmed.</p>`;
+function initWorkshopGallery(){
+ document.querySelectorAll('.workshop-gallery').forEach(gallery=>{
+  const frames=[...gallery.querySelectorAll('figure')];
+  let loaded=0,settled=0;
+  frames.forEach(frame=>{
+   const img=frame.querySelector('img');
+   function finish(ok){if(frame.dataset.done)return;frame.dataset.done='1';settled++;if(ok){frame.hidden=false;loaded++}else{frame.remove()}if(settled===frames.length&&loaded===0){const notice=gallery.nextElementSibling;if(notice&&notice.classList.contains('gallery-empty'))notice.hidden=false;gallery.hidden=true}}
+   img.addEventListener('load',()=>finish(true),{once:true});
+   img.addEventListener('error',()=>finish(false),{once:true});
+   if(img.complete)finish(img.naturalWidth>0);
+  });
+ });
+}
 const label=t=>`<div class="eyebrow">${t}</div>`;
 const banner=(t,s)=>`<section class="page-banner"><div class="container"><h1>${t}</h1><p>${s}</p></div></section>`;
 const btn=(t,h='#contact')=>`<a class="btn dark" href="${h}">${t} ↗</a>`;
@@ -88,29 +101,61 @@ function setupEnquiryFields(formId,selectId){
    host.innerHTML=fields.length?'<div class="conditional-fields-heading">A few questions about your request</div>'+fields.map(makeField).join(''):'';
  });
 }
-const contact=()=>`${banner('Contact & General Enquiries','For company information, partnerships or general questions, please get in touch. For technical assessment and quotations, use the dedicated request form.')}
-<section class="section"><div class="container contact-grid"><div>${label('CONTACT OUR TEAM')}<h2>Let’s define<br>the scope.</h2><p>Talk to us about transformer maintenance, fault assessment, electrical engineering requirements, company information or partnership enquiries.</p><h3>Telephone</h3><p><a href="tel:+2349163505000">+234 916 350 5000</a></p><h3>Email</h3><p><a href="mailto:brainboxenergyservicesltd@gmail.com">brainboxenergyservicesltd@gmail.com</a></p><h3>Corporate address</h3><p>Rotimi Amaechi Centre for Advanced Manufacturing (RACAM), Rivers State University, Port Harcourt, Nigeria.</p><div class="card-note"><h3>Need a technical quotation?</h3><p>Use our structured form to provide your organisation, equipment details, location and scope.</p>${btn('REQUEST A TECHNICAL QUOTE','#quote')}</div></div>
-<form class="contact-form" id="contact-form"><h3>General enquiry</h3><p>Fields marked * are required.</p><label for="name">Your name *</label><input id="name" name="name" required><label for="email">Work email *</label><input id="email" type="email" name="email" required><label for="organisation">Organisation (optional)</label><input id="organisation" name="organisation">${enquiryTopicSelect("enquiry-purpose")}<label for="message">Message *</label><textarea id="message" name="message" required></textarea><label class="consent-label"><input type="checkbox" name="consent" required> I agree that my details may be used to respond to this enquiry. *</label><button class="btn dark" type="submit">PREPARE EMAIL ENQUIRY ↗</button><p class="notice">This opens your email app with the enquiry details. No information is stored on this website.</p></form></div></section>`;
-const quote=()=>`${banner('Request a Technical Quote','Share your equipment details, service requirement and project location. Our team can use this information to review the scope and determine the next steps for assessment and quotation.')}
-<section class="section"><div class="container contact-grid"><div>${label('TECHNICAL SERVICE ENQUIRY')}<h2>Tell us about your<br>equipment or project.</h2><p>Provide enough information for an initial technical review. Detailed site requirements and supporting documents can be discussed through the appropriate process.</p><p>For urgent or time-sensitive incidents, contact the team directly to confirm availability.</p><h3>Contact</h3><p><a href="tel:+2349163505000">+234 916 350 5000</a><br><a href="mailto:brainboxenergyservicesltd@gmail.com">brainboxenergyservicesltd@gmail.com</a></p><div class="card-note"><b>Important</b><p>Submitting this form prepares an email in your email application; it does not send data to a server or automatically create a quotation. Avoid including confidential technical documents in this initial enquiry.</p></div></div>
-<form class="contact-form" id="quote-form"><h3>Engineering service enquiry</h3><p>Fields marked * are required.</p>
-<label for="q-organisation">Organisation *</label><input id="q-organisation" name="organisation" required>
-<label for="q-contact">Contact person *</label><input id="q-contact" name="contact" required>
-<label for="q-email">Work email *</label><input id="q-email" name="email" type="email" required>
-<label for="q-phone">Telephone *</label><input id="q-phone" name="phone" type="tel" required>
-<label for="q-type">Organisation type *</label><select id="q-type" name="organisation_type" required><option value="">Select one</option>${['Industrial or commercial organisation','Utility or power distribution company','Government agency or institution','Engineering or EPC company','Other'].map(x=>`<option>${x}</option>`).join('')}</select>
-<label for="q-service">Service required *</label><select id="q-service" name="service" required><option value="">Select a service</option>${services.map(x=>`<option>${x[0]}</option>`).join('')}</select>
-${enquiryTopicSelect("q-enquiry-purpose")}
-<label for="q-requirement">Requirement type</label><select id="q-requirement" name="requirement"><option>Planned maintenance</option><option>Emergency fault response</option><option>New project or commissioning</option><option>Tender or vendor prequalification</option><option>General technical enquiry</option></select>
-<label for="q-location">Project location</label><input id="q-location" name="location">
-<label for="q-equipment">Equipment details (if known)</label><input id="q-equipment" name="equipment">
-<label for="q-details">Scope of work / description *</label><textarea id="q-details" name="details" required></textarea>
-<label class="consent-label"><input type="checkbox" name="consent" required> I agree that these details may be used to respond to this business enquiry. *</label>
-<button class="btn dark" type="submit">PREPARE ENQUIRY EMAIL ↗</button>
-<p class="notice">This prototype opens your email application. No information is stored on the site. A future production version should use a secure company-managed form endpoint.</p></form></div></section>`;
+
+const choiceIcons={general:'✉',maintenance:'⚙',testing:'⌁',oil:'◈',lifting:'↥',winding:'◎',emergency:'!',equipment:'▣',partnership:'◇'};
+const wizardMarkup=(kind)=>`<form class="enquiry-wizard" id="${kind}-wizard">
+  <div class="wizard-progress"><div class="wizard-progress-meta"><span class="wizard-step-label">STEP 1 OF 3</span><span class="wizard-progress-name">Your request</span></div><div class="wizard-track"><span style="width:33.33%"></span></div></div>
+  <div class="wizard-panel" data-wizard-step="0"><span class="wizard-kicker">START HERE</span><h3>How can we help?</h3><p>Choose the reason you're reaching out. We'll only ask what's relevant.</p>
+  <div class="wizard-options" role="group" aria-label="Enquiry type">${enquiryTopics.map(([value,label])=>`<label class="wizard-option"><input type="radio" name="enquiry_topic" value="${value}" required><span class="wizard-option-icon" aria-hidden="true">${choiceIcons[value]||'•'}</span><span>${label}</span><span class="wizard-option-arrow" aria-hidden="true">↗</span></label>`).join('')}</div></div>
+  <div class="wizard-panel" data-wizard-step="1" hidden><span class="wizard-kicker">A FEW DETAILS</span><h3>Tell us a little more.</h3><p>These questions help us understand what your work involves.</p><div class="wizard-questions"></div></div>
+  <div class="wizard-panel" data-wizard-step="2" hidden><span class="wizard-kicker">FINAL STEP</span><h3>How can we reach you?</h3><p>Add your contact details so the team can follow up.</p>
+  <div class="wizard-field"><label for="${kind}-name">Your name <b>*</b></label><input id="${kind}-name" name="contact_name" autocomplete="name" required placeholder="Full name"></div>
+  <div class="wizard-field"><label for="${kind}-email">Email address <b>*</b></label><input id="${kind}-email" name="contact_email" type="email" autocomplete="email" required placeholder="you@company.com"></div>
+  <div class="wizard-field"><label for="${kind}-phone">Phone number</label><input id="${kind}-phone" name="contact_phone" type="tel" autocomplete="tel" placeholder="+234 ..."></div>
+  <div class="wizard-field"><label for="${kind}-org">Organisation</label><input id="${kind}-org" name="organisation" autocomplete="organization" placeholder="Company or organisation"></div>
+  <label class="consent-label"><input type="checkbox" name="consent" required> I agree that my information may be used to respond to this enquiry. *</label>
+  <div class="wizard-recap" aria-live="polite"></div></div>
+  <div class="wizard-actions"><button type="button" class="wizard-back" hidden>← Back</button><button type="button" class="wizard-next">Continue <span aria-hidden="true">→</span></button><button type="submit" class="wizard-send" hidden>Prepare enquiry email <span aria-hidden="true">↗</span></button></div>
+  <p class="wizard-footnote">No account required. Your email application will open to send the request; nothing is saved on this website.</p>
+ </form>`;
+const contact=()=>`${banner('Contact Us','Have a question or a project in mind? Get in touch with the Brainbox Energy team.')}
+<section class="section"><div class="container modern-contact">
+ <div class="contact-intro">${label('LET’S CONNECT')}<h2>Power starts<br>with a conversation.</h2><p>Whether it's a maintenance request, technical enquiry or potential partnership, tell us what you need and we'll help identify the next step.</p>
+ <div class="contact-details"><div><span>CALL US</span><a href="tel:+2349163505000">+234 916 350 5000</a></div><div><span>EMAIL US</span><a href="mailto:brainboxenergyservicesltd@gmail.com">brainboxenergyservicesltd@gmail.com</a></div><div><span>VISIT US</span><p>RACAM, Rivers State University, Port Harcourt, Nigeria.</p></div></div></div>
+ ${wizardMarkup('contact')}</div></section>`;
+const quote=()=>`${banner('Request a Quote','Share the essentials of your engineering requirement in three simple steps.')}
+<section class="section"><div class="container modern-contact">
+<div class="contact-intro">${label('ENGINEERING ENQUIRY')}<h2>Let's understand<br>your requirement.</h2><p>Tell us what service you need, answer a few relevant questions and leave your contact details. Our technical team can then assess the next steps.</p><div class="card-note"><b>For urgent electrical incidents</b><p>Contact us by phone to discuss response availability. Only qualified personnel should assess or isolate electrical equipment.</p><a href="tel:+2349163505000">+234 916 350 5000</a></div></div>
+${wizardMarkup('quote')}</div></section>`;
+function setupWizard(kind){
+ const form=document.getElementById(kind+'-wizard');if(!form)return;
+ const panels=[...form.querySelectorAll('.wizard-panel')];
+ const back=form.querySelector('.wizard-back'),next=form.querySelector('.wizard-next'),send=form.querySelector('.wizard-send');
+ const progress=form.querySelector('.wizard-track span'),counter=form.querySelector('.wizard-step-label'),name=form.querySelector('.wizard-progress-name');
+ let step=0;
+ function fieldHTML([key,title,type]){
+  const id=kind+'-question-'+key;
+  const required=/\(if known\)|\(if applicable\)|previous results|Are previous/i.test(title)?'':'required';
+  const label='<label for="'+id+'">'+title+(required?' <b>*</b>':'')+'</label>';
+  const attrs=' id="'+id+'" name="question_'+key+'" '+required;
+  if(type==='textarea')return '<div class="wizard-field">'+label+'<textarea'+attrs+' rows="4" placeholder="Tell us more..."></textarea></div>';
+  if(type.startsWith('select:'))return '<div class="wizard-field">'+label+'<select'+attrs+'><option value="">Please select</option>'+type.slice(7).split('|').map(x=>'<option>'+x+'</option>').join('')+'</select></div>';
+  return '<div class="wizard-field">'+label+'<input'+attrs+' placeholder="Enter details"></div>';
+ }
+ function show(n){step=n;panels.forEach((p,i)=>{p.hidden=i!==n});back.hidden=n===0;next.hidden=n===2;send.hidden=n!==2;counter.textContent='STEP '+(n+1)+' OF 3';name.textContent=['Your request','Project details','Contact details'][n];progress.style.width=((n+1)/3*100)+'%';}
+ function validPanel(){const panel=panels[step];if(step===0){const choice=form.querySelector('input[name="enquiry_topic"]:checked');if(!choice){form.querySelector('input[name="enquiry_topic"]').focus();return false}return true}
+  for(const element of panel.querySelectorAll('input,textarea,select')){if(!element.checkValidity()){element.reportValidity();return false}}return true;
+ }
+ function questions(){const chosen=form.querySelector('input[name="enquiry_topic"]:checked');if(!chosen)return;const fields=fieldsByTopic[chosen.value]||[];form.querySelector('.wizard-questions').innerHTML=fields.map(fieldHTML).join('');const label=enquiryTopics.find(t=>t[0]===chosen.value)?.[1]||'Enquiry';form.querySelector('.wizard-recap').textContent='Your enquiry: '+label;}
+ form.querySelectorAll('input[name="enquiry_topic"]').forEach(input=>input.addEventListener('change',questions));
+ next.addEventListener('click',()=>{if(!validPanel())return;if(step===0)questions();show(Math.min(step+1,2));});
+ back.addEventListener('click',()=>show(Math.max(step-1,0)));
+ form.addEventListener('submit',event=>{event.preventDefault();if(!validPanel())return;mailEnquiry(form,kind==='quote'?'Brainbox Energy — Technical Quote Enquiry':'Brainbox Energy — Website Enquiry');});
+ show(0);
+}
 const pages={home,about,services:servicePage,projects,insights,contact,quote};
 function mailEnquiry(form,subjectPrefix){const d=new FormData(form);const body=[...d.entries()].filter(([key])=>key!=='consent').map(([key,value])=>key.replaceAll('_',' ').toUpperCase()+': '+value).join('\n');location.href='mailto:brainboxenergyservicesltd@gmail.com?subject='+encodeURIComponent(subjectPrefix)+'&body='+encodeURIComponent(body)}
-function render(){let route=location.hash.slice(1).split('/')[0]||'home';if(!pages[route])route='home';document.getElementById('app').innerHTML=pages[route]();document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+route));document.title=(route==='home'?'Powering Reliability':route==='quote'?'Request a Technical Quote':route[0].toUpperCase()+route.slice(1))+' | Brainbox Energy Services Limited';closeMenu(false);window.scrollTo(0,0);const form=document.getElementById('contact-form');setupEnquiryFields('contact-form','enquiry-purpose');if(form)form.addEventListener('submit',e=>{e.preventDefault();mailEnquiry(form,'Brainbox Energy — General Enquiry')});const q=document.getElementById('quote-form');setupEnquiryFields('quote-form','q-enquiry-purpose');if(q)q.addEventListener('submit',e=>{e.preventDefault();mailEnquiry(q,'Brainbox Energy — Technical Quote Enquiry')})}
+function render(){let route=location.hash.slice(1).split('/')[0]||'home';if(!pages[route])route='home';document.getElementById('app').innerHTML=pages[route]();document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+route));document.title=(route==='home'?'Powering Reliability':route==='quote'?'Request a Technical Quote':route[0].toUpperCase()+route.slice(1))+' | Brainbox Energy Services Limited';closeMenu(false);window.scrollTo(0,0);initWorkshopGallery();setupWizard('contact');setupWizard('quote');}
 const menuButton=document.getElementById('menu');
 const mobileNav=document.getElementById('nav');
 const header=document.getElementById('header');
