@@ -13,7 +13,15 @@ const newWorkshopGallery=[
 ['workshop-inspection-testing.webp','Electrical equipment inspection','Testing'],
 ['workshop-coil-winding.webp','Transformer coil winding activity','Winding']
 ];
-const workshopPhotos=()=>`<div class="image-grid workshop-gallery">${newWorkshopGallery.map(g=>`<figure class="workshop-item" hidden><img loading="eager" decoding="async" src="${A+g[0]}" alt="${g[1]}"><figcaption><small>${g[2]}</small><br>${g[1]}</figcaption></figure>`).join('')}</div><div class="gallery-empty" hidden>New workshop photographs are being prepared for publication.</div><p class="notice">Actual workshop and equipment photographs. Some equipment labels remain general until confirmed.</p>`;
+const fallbackGallery=[
+ ['profile-18.jpg','Electrical field diagnostics','Inspection'],
+ ['profile-13.jpg','Workshop technical briefing','Workshop'],
+ ['profile-19.jpg','Transformer coil winding operations','Winding'],
+ ['profile-9.jpg','Transformer oil BDV test equipment','Testing'],
+ ['profile-22.png','RACAM workshop facility','Facility'],
+ ['profile-0.jpg','Transformer maintenance activity','Maintenance']
+];
+const workshopPhotos=()=>`<div class="image-grid workshop-gallery">${newWorkshopGallery.map((g,i)=>`<figure class="workshop-item" hidden><img loading="eager" decoding="async" src="${A+g[0]}" data-fallback="${fallbackGallery[i]?A+fallbackGallery[i][0]:''}" alt="${g[1]}"><figcaption><small>${g[2]}</small><br>${g[1]}</figcaption></figure>`).join('')}</div><div class="gallery-empty" hidden>Workshop photography will appear once the image assets are uploaded.</div><p class="notice">Photos illustrate workshop capabilities; equipment descriptions are subject to technical confirmation.</p>`;
 function initWorkshopGallery(){
  document.querySelectorAll('.workshop-gallery').forEach(gallery=>{
   const frames=[...gallery.querySelectorAll('figure')];
@@ -22,7 +30,7 @@ function initWorkshopGallery(){
    const img=frame.querySelector('img');
    function finish(ok){if(frame.dataset.done)return;frame.dataset.done='1';settled++;if(ok){frame.hidden=false;loaded++}else{frame.remove()}if(settled===frames.length&&loaded===0){const notice=gallery.nextElementSibling;if(notice&&notice.classList.contains('gallery-empty'))notice.hidden=false;gallery.hidden=true}}
    img.addEventListener('load',()=>finish(true),{once:true});
-   img.addEventListener('error',()=>finish(false),{once:true});
+   img.addEventListener('error',()=>{if(img.dataset.fallback&&!img.dataset.usedFallback){img.dataset.usedFallback='1';img.src=img.dataset.fallback;img.alt=fallbackGallery[frames.indexOf(frame)]?.[1]||'Workshop activity';const caption=frame.querySelector('figcaption');const alt=fallbackGallery[frames.indexOf(frame)];if(alt&&caption){caption.textContent=alt[1];const small=document.createElement('small');small.textContent=alt[2];caption.prepend(small,document.createElement('br'));}return;}finish(false);});
    if(img.complete)finish(img.naturalWidth>0);
   });
  });
