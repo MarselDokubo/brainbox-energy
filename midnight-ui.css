@@ -21,7 +21,7 @@ p{color:#5b6373}
 .hero:before{background:linear-gradient(90deg,rgba(3,7,20,.84) 0%,rgba(3,7,20,.65) 31%,rgba(3,7,20,.34) 58%,rgba(3,7,20,.07) 100%)}
 .hero .container{z-index:1}
 .hero h1{max-width:1110px;letter-spacing:-.073em;color:#fff}
-.hero h1 .hero-accent{color:#a9aaff}
+.hero h1 .hero-accent{color:#fff}
 .hero h1:after{background:#4c55ff;width:78px}
 .hero p{color:#d3d5e4;max-width:580px}
 .hero .btn.light:first-child{background:#103aff;color:#fff;border-color:#103aff}
@@ -109,7 +109,7 @@ footer a:hover{color:#a9aaff}
 }
 @media(max-width:700px){
  .hero:before{background:linear-gradient(90deg,rgba(3,7,20,.79),rgba(3,7,20,.40))}
- .hero h1 .hero-accent{color:#b4b5ff}
+ .hero h1 .hero-accent{color:#fff}
 }
 
 /* Subtle electric-blue micro-grid texture inspired by the supplied reference.
