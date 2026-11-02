@@ -176,6 +176,3 @@ footer a:hover{color:#a9aaff}
  .hero::before{background:linear-gradient(90deg,rgba(6,17,45,.59),rgba(6,17,45,.28))}
  .hero .hero-grid{background-size:13px 13px;opacity:.30}
 }
-
-/* Hero headline correction only — preserve soft-navy-v9 photo, overlay and grid. */
-.hero .container h1 .hero-accent{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important}
