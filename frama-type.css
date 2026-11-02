@@ -27,3 +27,53 @@ h3{letter-spacing:-.045em}
  .hero h1{font-size:clamp(47px,10.6vw,71px);line-height:1.05}
  h2{font-size:clamp(36px,9.7vw,52px)}
 }
+
+/* Body companion: PP Frama Text Regular */
+@font-face{
+  font-family:"PP Frama Text";
+  src:url("./assets/PPFramaText-Regular.woff2") format("woff2");
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+}
+:root{--bb-body-font:"PP Frama Text","DM Sans",Arial,sans-serif}
+body,p,li,dt,dd,blockquote,input,textarea,select,button,figcaption,
+.service-card p,.insight-card p,.bb-workflow-copy p,
+.bb-faq-items p,.bb-intro-section p,.bb-feature-section p,
+.page-banner p,.hero p,.cta p,.stats span,
+.enquiry-wizard .wizard-panel>p,.enquiry-wizard .wizard-option,
+.enquiry-wizard .wizard-field input,.enquiry-wizard .wizard-field textarea,
+.enquiry-wizard .wizard-field select,.enquiry-wizard .wizard-footnote,
+.modern-contact .contact-intro>p,.contact-details p,
+footer p,footer a,.notice{
+ font-family:var(--bb-body-font);
+}
+body{font-size:17px;line-height:1.65}
+p{font-size:17px;line-height:1.75;letter-spacing:0}
+.hero p{font-size:clamp(18px,1.5vw,21px);line-height:1.65}
+.page-banner p,.cta p{font-size:18px;line-height:1.7}
+.bb-intro-section .split p:not(.lead),.bb-feature-section p,
+.bb-services-section .service-card p,
+.bb-workflow-copy p,.bb-faq-items p,
+.bb-guidance-section .insight-card p{
+ font-size:16.5px;line-height:1.7;
+}
+.bb-workflow-strip,.stats span,.workshop-gallery figcaption{font-size:14px;line-height:1.55}
+.enquiry-wizard .wizard-panel>p,.modern-contact .contact-intro>p{font-size:16px;line-height:1.65}
+.enquiry-wizard .wizard-option{font-size:14px;line-height:1.45}
+.enquiry-wizard .wizard-field input,.enquiry-wizard .wizard-field select,
+.enquiry-wizard .wizard-field textarea{font-size:16px;line-height:1.45}
+.enquiry-wizard .wizard-field label{font-size:13px}
+.bb-faq-items summary{font-size:17px}
+footer p,footer a{font-size:14px;line-height:1.7}
+@media(max-width:700px){
+ body{font-size:16px}
+ p{font-size:16px;line-height:1.72}
+ .hero p{font-size:17px;line-height:1.65}
+ .page-banner p,.cta p{font-size:16px}
+ .bb-intro-section .split p:not(.lead),.bb-feature-section p,
+ .bb-services-section .service-card p,.bb-workflow-copy p,
+ .bb-faq-items p,.bb-guidance-section .insight-card p{font-size:16px}
+ .enquiry-wizard .wizard-option{font-size:14px}
+ .enquiry-wizard .wizard-field input,.enquiry-wizard .wizard-field select,.enquiry-wizard .wizard-field textarea{font-size:16px}
+}
