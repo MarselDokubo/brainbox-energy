@@ -1,0 +1,29 @@
+/* PP Frama typography trial — Brainbox Energy
+   Place supplied PPFrama-Medium.woff2 at assets/PPFrama-Medium.woff2.
+   If missing, the website safely uses Manrope/DM Sans. */
+@font-face{
+  font-family:"PP Frama";
+  src:url("./assets/PPFrama-Medium.woff2") format("woff2");
+  font-weight:500;
+  font-style:normal;
+  font-display:swap;
+}
+:root{--bb-display:"PP Frama","Manrope","DM Sans",Arial,sans-serif}
+h1,h2,h3,h4,.hero h1,.page-banner h1,.bb-section-top h2,.bb-faq-layout h2,.bb-intro-section h2,.bb-feature-section h2,.bb-services-section h2,.bb-sectors-section h2,.bb-gallery-section h2,.cta h2,.modern-contact .contact-intro h2,.enquiry-wizard h3{
+ font-family:var(--bb-display);
+ font-weight:500;
+ letter-spacing:-.057em;
+}
+.hero h1{font-size:clamp(59px,6.45vw,105px);line-height:1.015;letter-spacing:-.067em;font-weight:500}
+.page-banner h1{line-height:1.04}
+h2{font-size:clamp(42px,4.55vw,70px);line-height:1.065}
+h3{letter-spacing:-.045em}
+.bb-services-section .service-card h3{font-size:clamp(24px,2.15vw,31px);line-height:1.13}
+.bb-workflow-copy h3{font-size:clamp(25px,2.5vw,34px);line-height:1.15}
+.bb-faq-items summary,.stats strong,.bb-workflow-strip strong{font-family:var(--bb-display);font-weight:500}
+#header nav a{font-size:13px;letter-spacing:.025em}
+.hero p{font-family:"DM Sans",Arial,sans-serif;font-weight:400}
+@media(max-width:700px){
+ .hero h1{font-size:clamp(47px,10.6vw,71px);line-height:1.05}
+ h2{font-size:clamp(36px,9.7vw,52px)}
+}
