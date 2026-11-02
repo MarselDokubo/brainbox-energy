@@ -124,15 +124,15 @@ footer a:hover{color:#a9aaff}
   content:"";
   position:absolute;
   inset:0;
-  z-index:0;
+  z-index:2;
   pointer-events:none;
-  background-image:radial-gradient(circle,rgba(95,112,255,.55) .8px,transparent 1.2px);
-  background-size:10px 10px;
-  opacity:.23;
-  -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.2),rgba(0,0,0,.85) 40%,#000 70%,rgba(0,0,0,.45));
-  mask-image:linear-gradient(90deg,rgba(0,0,0,.2),rgba(0,0,0,.85) 40%,#000 70%,rgba(0,0,0,.45));
+  background-image:radial-gradient(circle,rgba(114,127,255,.85) 1px,transparent 1.5px);
+  background-size:11px 11px;
+  opacity:.40;
+  -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.18),rgba(0,0,0,.65) 40%,rgba(0,0,0,.85) 70%,rgba(0,0,0,.48));
+  mask-image:linear-gradient(90deg,rgba(0,0,0,.18),rgba(0,0,0,.65) 40%,rgba(0,0,0,.85) 70%,rgba(0,0,0,.48));
 }
-.hero>.container{position:relative;z-index:1}
+.hero>.container{position:relative;z-index:3}
 .bb-feature-section::before,
 .dark-section::before{
   content:"";
@@ -149,7 +149,7 @@ footer a:hover{color:#a9aaff}
 .bb-feature-section>.container,
 .dark-section>.container{position:relative;z-index:1}
 @media(max-width:700px){
-  .hero::after{opacity:.13;background-size:11px 11px}
+  .hero::after{opacity:.24;background-size:12px 12px}
   .bb-feature-section::before,.dark-section::before{opacity:.16;background-size:10px 10px}
 }
 @media(prefers-reduced-transparency:reduce){
