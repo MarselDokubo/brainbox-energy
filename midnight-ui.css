@@ -215,9 +215,3 @@ footer a:hover{color:#a9aaff}
  #header .brand .brand-picture{width:94px!important;flex:0 0 94px!important;height:90px!important;overflow:visible!important}
  #header .brand .brand-picture img{width:92px!important;height:90px!important;max-width:none!important;object-fit:contain!important}
 }
-
-/* Extended navy hero feature band: deliberate, gradual transition to white */
-.stats{position:relative;background:#090e27!important;border-bottom:0!important;overflow:hidden}
-.stats .container{padding-top:42px;padding-bottom:48px}
-.stats::after{content:"";display:block;height:116px;width:100%;background:linear-gradient(180deg,#090e27 0%,#111a37 33%,#39435e 67%,#fff 100%);pointer-events:none}
-@media(max-width:700px){.stats .container{padding-top:34px;padding-bottom:32px}.stats::after{height:76px}}
