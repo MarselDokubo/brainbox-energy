@@ -21,10 +21,10 @@ p{color:#65738a}
 .eyebrow:before,.bb-eyebrow:before{content:"";height:2px;width:23px;flex:none;background:#315feb}
 .eyebrow:after{display:none}
 .overline{color:#315feb}
-.hero{min-height:665px;display:flex;align-items:center;position:relative;isolation:isolate;background:#dceefe;color:#192c4c;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#dceefe 0%,rgba(220,238,254,.98) 26%,rgba(220,238,254,.9) 42%,rgba(220,238,254,.42) 66%,rgba(220,238,254,.09) 100%)}
+.hero{min-height:665px;display:flex;align-items:center;position:relative;isolation:isolate;background:#dceefe url('assets/profile-0.jpg') center right / cover no-repeat;color:#192c4c;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,#dceefe 0%,rgba(220,238,254,.98) 26%,rgba(220,238,254,.9) 42%,rgba(220,238,254,.42) 66%,rgba(220,238,254,.09) 100%)}
 .hero:after{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/profile-0.jpg') center right / cover no-repeat}
-.hero .container{padding:95px 0;position:relative}
+.hero .container{padding:95px 0;position:relative;z-index:1}
 .hero .container:before{content:"TRANSFORMER & POWER ENGINEERING";display:inline-flex;align-items:center;margin:0 0 23px;padding:8px 14px;background:rgba(255,255,255,.67);border:1px solid rgba(80,115,179,.17);border-radius:80px;color:#315feb;font-size:10px;font-weight:800;letter-spacing:.1em}
 .hero h1{color:#192c4c;font-size:clamp(54px,6.2vw,88px);line-height:1.02;max-width:860px;letter-spacing:-.074em}
 .hero h1:after{content:"";display:block;width:73px;height:4px;background:#315feb;border-radius:5px;margin:28px 0}
