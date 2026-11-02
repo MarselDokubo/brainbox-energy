@@ -77,3 +77,76 @@ footer p,footer a{font-size:14px;line-height:1.7}
  .enquiry-wizard .wizard-option{font-size:14px}
  .enquiry-wizard .wizard-field input,.enquiry-wizard .wizard-field select,.enquiry-wizard .wizard-field textarea{font-size:16px}
 }
+
+/* Sitewide type enforcement: all reading copy uses PP Frama Text Regular.
+   Headings remain PP Frama Medium. Font files verified in /assets on main. */
+:root{--bb-reading-font:"PP Frama Text","DM Sans",Arial,sans-serif}
+html body{font-family:var(--bb-reading-font);font-size:18px;line-height:1.65}
+html body :is(p,li,dt,dd,blockquote,figcaption,small,label,summary,input,select,textarea,button),
+html body :is(.lead,.notice,.value,.card-note,.contact-details,.contact-benefits,.wizard-option,.wizard-review,.service-card,.insight-card,.process,.bb-workflow-copy,.bb-workflow-strip,.bb-faq-items,.stats,.eyebrow,.overline,.bb-eyebrow,.bb-text-link),
+html body footer,
+html body #header nav,
+html body .header-cta{
+  font-family:var(--bb-reading-font);
+}
+html body main p,
+html body .split p,
+html body .bb-intro-section .split p,
+html body .bb-intro-section .split p.lead,
+html body .bb-feature-section p,
+html body .section > .container > h2 + p{
+ font-family:var(--bb-reading-font);
+ font-size:18px;
+ line-height:1.7;
+ letter-spacing:-.005em;
+}
+html body .bb-intro-section .split .lead{
+ font-family:var(--bb-reading-font);
+ font-size:21px;
+ line-height:1.55;
+ font-weight:600;
+ letter-spacing:-.014em;
+}
+html body .hero p{font-family:var(--bb-reading-font);font-size:20px;line-height:1.62}
+html body :is(.service-card p,.insight-card p,.bb-services-section .service-card p,
+.bb-workflow-copy p,.bb-faq-items p,.bb-guidance-section .insight-card p,
+.process p,.value p,.contact-details p,.benefit-card p){
+ font-family:var(--bb-reading-font);
+ font-size:17px;
+ line-height:1.65;
+}
+html body .bb-workflow-strip,
+html body .workshop-gallery figcaption,
+html body .stats span{font-family:var(--bb-reading-font);font-size:15px;line-height:1.6}
+html body .modern-contact .contact-intro>p,
+html body .enquiry-wizard .wizard-panel>p{
+ font-family:var(--bb-reading-font);font-size:17px;line-height:1.7;
+}
+html body .enquiry-wizard .wizard-option{font-family:var(--bb-reading-font);font-size:15px;line-height:1.45}
+html body .enquiry-wizard :is(input,select,textarea){font-family:var(--bb-reading-font);font-size:16px}
+html body :is(.page-banner p,.cta p){font-family:var(--bb-reading-font);font-size:19px;line-height:1.7}
+html body footer :is(p,a){font-family:var(--bb-reading-font);font-size:15px;line-height:1.6}
+html body .bb-faq-items summary{font-family:var(--bb-reading-font);font-size:18px;line-height:1.5}
+html body #header nav a{font-family:var(--bb-reading-font);font-size:14px;letter-spacing:.01em}
+html body :is(h1,h2,h3,h4),
+html body .hero h1,
+html body .page-banner h1,
+html body .modern-contact .contact-intro h2,
+html body .enquiry-wizard h3{
+ font-family:var(--bb-display);
+}
+@media(max-width:700px){
+ html body{font-size:16px}
+ html body main p,html body .split p,
+ html body .bb-intro-section .split p,
+ html body .bb-feature-section p,
+ html body .section > .container > h2 + p{font-size:16.5px;line-height:1.7}
+ html body .bb-intro-section .split .lead{font-size:19px;line-height:1.56}
+ html body .hero p{font-size:17px;line-height:1.65}
+ html body :is(.service-card p,.insight-card p,.bb-services-section .service-card p,
+ .bb-workflow-copy p,.bb-faq-items p,.bb-guidance-section .insight-card p,
+ .process p,.value p,.contact-details p,.benefit-card p){font-size:16px;line-height:1.66}
+ html body :is(.page-banner p,.cta p){font-size:17px}
+ html body .bb-faq-items summary{font-size:16.5px}
+ html body .enquiry-wizard .wizard-option{font-size:14px}
+}
