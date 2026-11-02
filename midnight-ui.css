@@ -160,7 +160,7 @@ footer a:hover{color:#a9aaff}
 .hero{position:relative;isolation:isolate;background:#060a1a url('assets/profile-0.jpg') center right/cover no-repeat}
 .hero::before{
  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
- background:linear-gradient(90deg,rgba(5,9,23,.83) 0%,rgba(5,9,23,.56) 35%,rgba(6,13,34,.26) 70%,rgba(6,13,34,.12) 100%),linear-gradient(110deg,rgba(19,40,117,.10),transparent 68%);
+ background:linear-gradient(90deg,rgba(4,10,34,.42) 0%,rgba(8,18,58,.28) 35%,rgba(32,84,255,.12) 72%,rgba(32,84,255,.08) 100%);
 }
 .hero::after{content:none!important;display:none!important}
 .hero .hero-grid{
@@ -173,6 +173,6 @@ footer a:hover{color:#a9aaff}
 }
 .hero>.container{position:relative;z-index:2}
 @media(max-width:700px){
- .hero::before{background:linear-gradient(90deg,rgba(5,9,23,.83),rgba(6,11,30,.43)),linear-gradient(110deg,rgba(25,42,115,.08),transparent)}
+ .hero::before{background:linear-gradient(90deg,rgba(4,10,34,.38),rgba(32,84,255,.09))}
  .hero .hero-grid{background-size:13px 13px;opacity:.30}
 }
