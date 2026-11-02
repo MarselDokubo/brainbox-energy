@@ -18,7 +18,7 @@ p{color:#5b6373}
 .eyebrow,.bb-eyebrow,.overline{color:#324bce}
 .eyebrow:before,.bb-eyebrow:before{background:#3651fd}
 .hero{background:#05091c url('assets/profile-0.jpg') center right/cover no-repeat;min-height:745px;position:relative}
-.hero:before{background:linear-gradient(90deg,rgba(3,6,22,.99) 0%,rgba(4,7,31,.96) 31%,rgba(6,9,38,.84) 56%,rgba(3,6,22,.38) 100%),radial-gradient(ellipse at 42% 52%,rgba(18,12,160,.47),transparent 52%)}
+.hero:before{background:linear-gradient(90deg,rgba(3,7,20,.84) 0%,rgba(3,7,20,.65) 31%,rgba(3,7,20,.34) 58%,rgba(3,7,20,.07) 100%)}
 .hero .container{z-index:1}
 .hero h1{max-width:1110px;letter-spacing:-.073em;color:#fff}
 .hero h1 .hero-accent{color:#a9aaff}
@@ -108,7 +108,7 @@ footer a:hover{color:#a9aaff}
  #nav a.active,#nav a:hover,#header #nav a.active{color:#c1c5ff}
 }
 @media(max-width:700px){
- .hero:before{background:linear-gradient(90deg,rgba(3,6,22,.97),rgba(6,8,39,.77)),radial-gradient(ellipse at center,rgba(20,15,135,.24),transparent)}
+ .hero:before{background:linear-gradient(90deg,rgba(3,7,20,.79),rgba(3,7,20,.40))}
  .hero h1 .hero-accent{color:#b4b5ff}
 }
 
@@ -126,11 +126,11 @@ footer a:hover{color:#a9aaff}
   inset:0;
   z-index:0;
   pointer-events:none;
-  background-image:radial-gradient(circle,rgba(92,110,255,.22) .7px,transparent 1px);
+  background-image:radial-gradient(circle,rgba(95,112,255,.55) .8px,transparent 1.2px);
   background-size:10px 10px;
-  opacity:.08;
-  -webkit-mask-image:linear-gradient(90deg,transparent 6%,rgba(0,0,0,.16) 30%,#000 75%,rgba(0,0,0,.65));
-  mask-image:linear-gradient(90deg,transparent 6%,rgba(0,0,0,.16) 30%,#000 75%,rgba(0,0,0,.65));
+  opacity:.23;
+  -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.2),rgba(0,0,0,.85) 40%,#000 70%,rgba(0,0,0,.45));
+  mask-image:linear-gradient(90deg,rgba(0,0,0,.2),rgba(0,0,0,.85) 40%,#000 70%,rgba(0,0,0,.45));
 }
 .hero>.container{position:relative;z-index:1}
 .bb-feature-section::before,
@@ -149,7 +149,7 @@ footer a:hover{color:#a9aaff}
 .bb-feature-section>.container,
 .dark-section>.container{position:relative;z-index:1}
 @media(max-width:700px){
-  .hero::after{opacity:.05;background-size:10px 10px}
+  .hero::after{opacity:.13;background-size:11px 11px}
   .bb-feature-section::before,.dark-section::before{opacity:.16;background-size:10px 10px}
 }
 @media(prefers-reduced-transparency:reduce){
