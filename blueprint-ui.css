@@ -1,0 +1,146 @@
+
+/* BRAINBOX ENERGY · 2026 brand system · Powder blue / cobalt / navy */
+:root{--navy:#192c4c;--gold:#3564eb;--ink:#192c4c;--muted:#60728c;--line:#e1e9f2;--blue:#315feb;--pale:#e2f2ff;--pale2:#f1f7ff}
+html{scroll-padding-top:86px}
+body{background:#fff;color:#192c4c;font-family:'DM Sans',Arial,sans-serif}
+h1,h2,h3,h4{color:#192c4c;letter-spacing:-.052em}
+h2{font-size:clamp(33px,4.4vw,61px);line-height:1.08}
+p{color:#65738a}
+#header{height:86px;padding:0 max(4vw,24px);background:#fff;border-color:#e9edf4;box-shadow:none}
+#header .brand{height:86px;flex-basis:145px;width:145px}
+#header .brand .brand-picture{height:86px}
+#header nav a{font-size:12px;letter-spacing:.015em;font-weight:750;color:#192c4c}
+#header nav a.active,#header nav a:hover{color:#315feb}
+.header-cta,.btn,.btn.dark{background:#315feb;border:1px solid #315feb;color:white;border-radius:11px;letter-spacing:0;text-transform:none;box-shadow:0 5px 13px rgba(49,95,235,.14);font-weight:750}
+.header-cta:hover,.btn:hover,.btn.dark:hover{background:#234bca;border-color:#234bca;color:white}
+.btn{padding:15px 21px}
+.container{width:min(1180px,88%)}
+.section{padding:94px 0}
+.section.tinted{background:#f1f7ff}
+.eyebrow,.bb-eyebrow{display:flex;align-items:center;gap:12px;color:#315feb;letter-spacing:.13em;font-size:10px;font-weight:800;text-transform:uppercase;margin-bottom:22px}
+.eyebrow:before,.bb-eyebrow:before{content:"";height:2px;width:23px;flex:none;background:#315feb}
+.eyebrow:after{display:none}
+.overline{color:#315feb}
+.hero{min-height:665px;display:flex;align-items:center;position:relative;isolation:isolate;background:#dceefe;color:#192c4c;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#dceefe 0%,rgba(220,238,254,.98) 26%,rgba(220,238,254,.9) 42%,rgba(220,238,254,.42) 66%,rgba(220,238,254,.09) 100%)}
+.hero:after{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/profile-0.jpg') center right / cover no-repeat}
+.hero .container{padding:95px 0;position:relative}
+.hero .container:before{content:"TRANSFORMER & POWER ENGINEERING";display:inline-flex;align-items:center;margin:0 0 23px;padding:8px 14px;background:rgba(255,255,255,.67);border:1px solid rgba(80,115,179,.17);border-radius:80px;color:#315feb;font-size:10px;font-weight:800;letter-spacing:.1em}
+.hero h1{color:#192c4c;font-size:clamp(54px,6.2vw,88px);line-height:1.02;max-width:860px;letter-spacing:-.074em}
+.hero h1:after{content:"";display:block;width:73px;height:4px;background:#315feb;border-radius:5px;margin:28px 0}
+.hero p{color:#3d5778;max-width:520px;font-size:17px;line-height:1.7}
+.hero .actions{margin-top:30px;gap:12px}
+.hero .btn.light:first-child{color:#fff;background:#315feb;border-color:#315feb}
+.hero .btn.light:not(:first-child){color:#192c4c;border:1px solid #d2dfef;background:rgba(255,255,255,.88)}
+.hero .btn.light:not(:first-child):hover{background:#fff}
+.stats{background:#fff;color:#192c4c;border-bottom:1px solid #e6edf7}
+.stats .container{gap:0;padding:26px 0}
+.stats .container>div{padding:10px 26px;border-left:1px solid #e5ebf5}
+.stats .container>div:first-child{padding-left:0;border-left:0}
+.stats strong{font-size:17px;color:#192c4c;letter-spacing:-.025em}
+.stats span{color:#6d7b93}
+.split{gap:clamp(32px,6vw,83px)}
+.split>img{border-radius:24px;object-fit:cover;box-shadow:none}
+.split .lead{color:#3f5570}
+.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;background:transparent;border:0}
+.service-card,.insight-card{border:1px solid #e5eaf3;background:#fff;border-radius:20px;padding:28px;min-height:235px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.service-card:hover,.insight-card:hover{background:#fff;border-color:#cadbf6;transform:translateY(-3px);box-shadow:0 12px 30px rgba(30,68,124,.07)}
+.service-card .number{display:inline-flex;color:#315feb;background:#eff4ff;border-radius:30px;padding:7px 12px;font-size:10px;letter-spacing:.08em}
+.service-card h3{margin:28px 0 11px;font-size:21px;line-height:1.25}
+.service-card a,.insight-card a{color:#315feb}
+.service-card p{color:#718098}
+.dark-section{background:#e5f2ff;color:#192c4c}
+.dark-section h2,.dark-section h3{color:#192c4c}
+.dark-section p{color:#60748c}
+.dark-section .eyebrow{color:#315feb}
+.process{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.process article{background:#fff;border:1px solid #dce8fa;border-radius:16px;padding:23px;min-height:204px}
+.process b{display:inline-flex;background:#eef4ff;border-radius:30px;padding:7px 12px;color:#315feb;font-size:12px}
+.process h3{font-size:20px}
+.process p{font-size:13px}
+.page-banner{background:linear-gradient(90deg,#e4f2ff 0%,rgba(228,242,255,.94) 43%,rgba(228,242,255,.45) 100%),url('assets/profile-18.jpg') center/cover;color:#192c4c;padding:84px 0}
+.page-banner h1{color:#192c4c;font-size:clamp(45px,5.5vw,72px);max-width:960px}
+.page-banner p{color:#425f7e;font-size:17px;max-width:700px}
+.values{gap:15px}
+.value{border:1px solid #e2e9f4;border-radius:15px;padding:22px;background:#fff}
+.value p{margin-bottom:0}
+.accordion details,details{border-color:#dbe4f2}
+.cta{background:linear-gradient(90deg,rgba(27,49,85,.94),rgba(33,62,105,.72)),url('assets/profile-13.jpg') center/cover;border:0;color:white}
+.cta h2,.cta h3{color:white}
+.cta p{color:#dceaff}
+.cta .btn.light{background:#fff;border-color:#fff;color:#2452ce}
+.cta .btn.light:hover{background:#e4f1ff;color:#1d3c89}
+.contact-benefits{border-top:1px solid #e6edf6}
+.modern-contact .enquiry-wizard{background:#f0f6fe}
+.enquiry-wizard .wizard-node.is-current span,.enquiry-wizard .wizard-node.is-complete span{background:#315feb;border-color:#315feb}
+.enquiry-wizard .wizard-track span{background:#315feb}
+.enquiry-wizard .wizard-option{border-color:#dfe8f6;border-radius:12px}
+.enquiry-wizard .wizard-option:has(input:checked){border-color:#315feb;background:#e5efff;box-shadow:inset 3px 0 0 #315feb}
+.enquiry-wizard .wizard-next,.enquiry-wizard .wizard-send{background:#315feb;border-radius:9px}
+.enquiry-wizard .wizard-next:hover,.enquiry-wizard .wizard-send:hover{background:#234bca}
+.enquiry-wizard .wizard-field input,.enquiry-wizard .wizard-field select,.enquiry-wizard .wizard-field textarea{border-radius:9px}
+.workshop-gallery img,.image-grid:not(.workshop-gallery) img{border-radius:20px}
+.workshop-gallery figure:first-child img,.workshop-gallery figure:nth-child(2) img{border-radius:24px}
+.workshop-gallery figcaption,.image-grid:not(.workshop-gallery) figcaption{padding:13px 2px 0}
+.bb-workflow{background:#fff}
+.bb-section-top{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:30px}
+.bb-section-top h2{margin:0}
+.bb-text-link{color:#315feb;font-size:13px;font-weight:750;white-space:nowrap;padding-bottom:10px}
+.bb-workflow-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.bb-workflow-card{background:#fff;border:1px solid #e1e9f3;border-radius:20px;overflow:hidden}
+.bb-workflow-art{height:175px;background:#eaf3ff;overflow:hidden;position:relative}
+.bb-workflow-art img{height:100%;width:100%;object-fit:cover;object-position:center;mix-blend-mode:multiply;opacity:.83}
+.bb-art-two{background:#e8eeff}.bb-art-three{background:#e4f3f6}
+.bb-workflow-copy{padding:24px}
+.bb-workflow-copy>span{font-size:10px;font-weight:800;letter-spacing:.12em;color:#315feb}
+.bb-workflow-copy h3{margin:11px 0;font-size:22px;letter-spacing:-.04em}
+.bb-workflow-copy p{font-size:13px;line-height:1.7;margin:0}
+.bb-workflow-strip{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:16px 20px;margin-top:15px;background:#f1f6ff;border-radius:13px;color:#37517a;font-size:12px}
+.bb-workflow-strip strong{color:#192c4c}
+.bb-faq{background:#f0f7ff}
+.bb-faq-layout{display:grid;grid-template-columns:1fr 1.25fr;gap:70px;align-items:start}
+.bb-faq-layout h2{margin:0 0 20px}
+.bb-faq-layout p{font-size:15px;max-width:390px}
+.bb-faq-items details{padding:23px 0;border-bottom:1px solid #cfdded}
+.bb-faq-items details:first-child{border-top:1px solid #cfdded}
+.bb-faq-items summary{color:#1d3658;font-size:15px;font-weight:750}
+.bb-faq-items details[open] summary:after{color:#315feb}
+.bb-faq-items p{font-size:13px;max-width:unset;line-height:1.75;padding:5px 32px 0 0}
+footer{background:#192c4c;color:#fff}
+footer p{color:#bfd0e7}
+footer strong span{color:#89b6ff}
+footer a:hover{color:#a8caff}
+@media(max-width:1120px){
+ #header.menu-open{background:transparent}
+ #header.menu-open .brand{color:#fff}
+ #nav{background:linear-gradient(135deg,rgba(31,62,129,.94),rgba(18,43,91,.92));backdrop-filter:blur(19px);-webkit-backdrop-filter:blur(19px)}
+ #nav a.active,#nav a:hover{color:#bbd4ff}
+}
+@media(max-width:900px){
+ .process{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .bb-faq-layout{grid-template-columns:1fr;gap:32px}
+ .bb-workflow-grid{grid-template-columns:1fr 1fr}
+ .bb-workflow-card:last-child{grid-column:1/-1}
+ .modern-contact .enquiry-wizard{background:#f1f7ff}
+}
+@media(max-width:700px){
+ #header{height:76px}
+ .hero{min-height:620px}
+ .hero:before{background:linear-gradient(90deg,rgba(221,239,255,.97),rgba(221,239,255,.86))}
+ .hero .container{padding:70px 0}
+ .hero h1{font-size:clamp(44px,11vw,67px)}
+ .hero p{font-size:15px}
+ .hero .btn{width:100%;justify-content:center}
+ .stats .container{grid-template-columns:1fr;gap:4px}
+ .stats .container>div{border:0;border-bottom:1px solid #e5ebf5;padding:15px 0}
+ .service-grid{grid-template-columns:1fr}
+ .service-card{min-height:0}
+ .process{grid-template-columns:1fr}
+ .bb-section-top{align-items:start;flex-direction:column}
+ .bb-workflow-grid{grid-template-columns:1fr}
+ .bb-workflow-card:last-child{grid-column:auto}
+ .bb-workflow-art{height:190px}
+ .bb-workflow-strip{align-items:flex-start;flex-direction:column}
+ .bb-faq{padding:72px 0}
+}
+@media(prefers-reduced-motion:reduce){.bb-workflow-card,.service-card{transition:none}}
