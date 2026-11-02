@@ -229,3 +229,17 @@ footer a:hover{color:#a9aaff}
 .bb-editorial-story p{max-width:720px;color:#d5dbee;font-size:clamp(17px,1.15vw,20px);line-height:1.58;margin:0 0 22px}
 .bb-editorial-signoff{display:flex;gap:35px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.2);padding-top:22px;margin-top:50px;color:#aeb9d3;font-size:13px;letter-spacing:.02em}
 @media(max-width:800px){.stats.bb-editorial-band .container.bb-editorial-grid{grid-template-columns:1fr!important;gap:56px!important;padding:72px 24px 88px!important}.bb-editorial-kicker{margin-bottom:26px}.bb-editorial-intro h2{font-size:42px}.bb-editorial-story h3{font-size:clamp(36px,9vw,54px)}.bb-editorial-signoff{gap:16px 25px;margin-top:34px}}
+
+/* Keep original 3-column band, then the standalone editorial story */
+.stats:not(.bb-editorial-band){background:#090e27!important}
+.stats:not(.bb-editorial-band) .container{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;padding:30px 0}
+.stats.bb-editorial-band .bb-editorial-grid>.bb-editorial-intro,
+.stats.bb-editorial-band .bb-editorial-grid>.bb-editorial-story{border:0!important;min-width:0}
+.stats.bb-editorial-band .bb-editorial-intro h2,
+.stats.bb-editorial-band .bb-editorial-story h3{color:#fff!important;opacity:1!important;text-shadow:none!important}
+.stats.bb-editorial-band .bb-editorial-intro p,
+.stats.bb-editorial-band .bb-editorial-story p{color:#dce2f1!important;opacity:1!important}
+.stats.bb-editorial-band .bb-editorial-kicker{color:#aeb9d3!important}
+.stats.bb-editorial-band .bb-editorial-signoff{color:#c8d1e4!important}
+.stats.bb-editorial-band .bb-editorial-signoff span{color:inherit!important;font-size:13px!important;display:inline-block!important}
+@media(max-width:700px){.stats:not(.bb-editorial-band) .container{grid-template-columns:1fr;gap:22px}}
