@@ -187,3 +187,17 @@ footer a:hover{color:#a9aaff}
  #header.menu-open{background:#080d26!important}
  #header #nav{background:linear-gradient(145deg,rgba(8,11,35,.96),rgba(14,20,86,.94))}
 }
+
+/* Header polish, isolated from approved hero treatment */
+@media(min-width:901px){
+ #header{height:112px!important;min-height:112px!important;padding-top:7px!important;padding-bottom:7px!important}
+ #header .brand,#header .brand .brand-picture{height:98px!important}
+ #header .brand .brand-picture img{width:136px!important;height:102px!important;object-fit:contain!important}
+}
+#header .header-cta{background:#fff!important;border:1px solid #fff!important;color:#080d26!important;box-shadow:none!important}
+#header .header-cta:hover{background:#e8ecf5!important;border-color:#e8ecf5!important;color:#080d26!important}
+@media(max-width:900px){
+ #header{min-height:86px!important;height:86px!important}
+ #header .brand,#header .brand .brand-picture{height:86px!important}
+ #header .brand .brand-picture img{object-fit:contain!important}
+}
