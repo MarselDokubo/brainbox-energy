@@ -36,7 +36,7 @@ function initWorkshopGallery(){
  });
 }
 const label=t=>`<div class="eyebrow">${t}</div>`;
-const banner=(t,s)=>`<section class="page-banner"><div class="container"><h1>${t}</h1><p>${s}</p></div></section>`;
+const banner=(t,s)=>`<section class="page-banner"><div class="page-banner-grid" aria-hidden="true"></div><div class="container"><h1>${t}</h1><p>${s}</p></div></section>`;
 const btn=(t,h='#contact')=>`<a class="btn dark" href="${h}">${t} ↗</a>`;
 const tiles=()=>`<div class="service-grid">${services.map((s,i)=>`<article class="service-card"><span class="number">0${i+1} / EXPERTISE</span><h3>${s[0]}</h3><p>${s[1]}</p><a href="#services">Explore service ↗</a></article>`).join('')}</div>`;
 const photos=()=>`<div class="image-grid">${gallery.map(g=>`<figure><img loading="lazy" src="${A+g[0]}" alt="${g[1]}"><figcaption>${g[1]}</figcaption></figure>`).join('')}</div>`;
