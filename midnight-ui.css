@@ -201,3 +201,17 @@ footer a:hover{color:#a9aaff}
  #header .brand,#header .brand .brand-picture{height:86px!important}
  #header .brand .brand-picture img{object-fit:contain!important}
 }
+
+/* Larger white PNG brand lockup — preserve navy header and hero */
+@media(min-width:901px){
+ #header{height:126px!important;min-height:126px!important}
+ #header .brand{width:190px!important;flex:0 0 190px!important;height:116px!important;overflow:visible!important}
+ #header .brand .brand-picture{width:190px!important;flex:0 0 190px!important;height:116px!important;overflow:visible!important}
+ #header .brand .brand-picture img{width:185px!important;height:116px!important;max-width:none!important;object-fit:contain!important}
+}
+@media(max-width:900px){
+ #header{height:92px!important;min-height:92px!important}
+ #header .brand{width:94px!important;flex:0 0 94px!important;height:90px!important;overflow:visible!important}
+ #header .brand .brand-picture{width:94px!important;flex:0 0 94px!important;height:90px!important;overflow:visible!important}
+ #header .brand .brand-picture img{width:92px!important;height:90px!important;max-width:none!important;object-fit:contain!important}
+}
