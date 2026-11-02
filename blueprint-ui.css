@@ -144,3 +144,79 @@ footer a:hover{color:#a8caff}
  .bb-faq{padding:72px 0}
 }
 @media(prefers-reduced-motion:reduce){.bb-workflow-card,.service-card{transition:none}}
+
+/* Brand colour restoration — preserve the refreshed layout, cards and workflow. */
+:root{--navy:#071d39;--gold:#e6a11b;--ink:#151b22;--muted:#65717c;--line:#d9dee3;--blue:#e6a11b;--pale:#f6f8fa;--pale2:#f6f8fa}
+body{background:#fff;color:#151b22}
+h1,h2,h3,h4{color:#151b22}
+p{color:#5b6570}
+#header{border-color:#eceff2}
+#header nav a{color:#071d39}
+#header nav a.active,#header nav a:hover{color:#bf8013}
+.header-cta,.btn,.btn.dark{background:#071d39;border-color:#071d39;color:#fff;box-shadow:0 5px 13px rgba(7,29,57,.1)}
+.header-cta:hover,.btn:hover,.btn.dark:hover{background:#e6a11b;border-color:#e6a11b;color:#071d39}
+.section.tinted{background:#f6f8fa}
+.eyebrow,.bb-eyebrow,.overline{color:#bb801b}
+.eyebrow:before,.bb-eyebrow:before{background:#d79a29}
+.hero{background:#071d39 url('assets/profile-0.jpg') center right / cover no-repeat;color:#fff}
+.hero:before{background:linear-gradient(90deg,rgba(3,19,38,.96) 0%,rgba(3,19,38,.91) 28%,rgba(3,19,38,.73) 51%,rgba(3,19,38,.30) 76%,rgba(3,19,38,.12) 100%)}
+.hero .container:before{background:rgba(7,29,57,.5);border-color:rgba(255,255,255,.23);color:#e8b757}
+.hero h1{color:#fff}
+.hero h1:after{background:#e6a11b}
+.hero p{color:#e5ebf3}
+.hero .btn.light:first-child{background:#fff;border-color:#fff;color:#071d39}
+.hero .btn.light:first-child:hover{background:#e6a11b;border-color:#e6a11b;color:#071d39}
+.hero .btn.light:not(:first-child){background:transparent;border-color:rgba(255,255,255,.67);color:#fff}
+.hero .btn.light:not(:first-child):hover{background:#fff;color:#071d39}
+.stats{background:#071d39;color:#fff;border-color:#203c59}
+.stats .container>div{border-color:#29415c}
+.stats strong{color:#fff}
+.stats span{color:#b7c8da}
+.split .lead{color:#465464}
+.service-card,.insight-card{border-color:#e1e6eb}
+.service-card:hover,.insight-card:hover{border-color:#d6c49e;box-shadow:0 12px 30px rgba(7,29,57,.06)}
+.service-card .number{color:#a87317;background:#fcf5e7}
+.service-card a,.insight-card a{color:#071d39}
+.dark-section{background:#071d39;color:#fff}
+.dark-section h2,.dark-section h3{color:#fff}
+.dark-section p{color:#d5e0ea}
+.dark-section .eyebrow{color:#e5aa39}
+.process article{background:#102b4d;border-color:#314863}
+.process b{background:rgba(230,161,27,.16);color:#f1bc5f}
+.process h3{color:#fff}
+.process p{color:#cfdae8}
+.page-banner{background:linear-gradient(90deg,rgba(5,25,47,.93),rgba(5,25,47,.72),rgba(5,25,47,.30)),url('assets/profile-18.jpg') center / cover;color:#fff}
+.page-banner h1{color:#fff}
+.page-banner p{color:#e0eaf3}
+.value{border-color:#e1e6eb}
+.cta{background:linear-gradient(90deg,rgba(3,22,43,.95),rgba(3,22,43,.73)),url('assets/profile-13.jpg') center / cover}
+.cta .btn.light{color:#071d39}
+.cta .btn.light:hover{background:#e6a11b;border-color:#e6a11b;color:#071d39}
+.modern-contact .enquiry-wizard{background:#f6f8fa}
+.enquiry-wizard .wizard-node.is-current span{background:#071d39;border-color:#071d39}
+.enquiry-wizard .wizard-node.is-complete span{background:#d5a042;border-color:#d5a042}
+.enquiry-wizard .wizard-track span{background:#d6a03a}
+.enquiry-wizard .wizard-option{border-color:#e2e7eb}
+.enquiry-wizard .wizard-option:has(input:checked){background:#fff8ea;border-color:#c7963a;box-shadow:inset 3px 0 0 #c7963a}
+.enquiry-wizard .wizard-next,.enquiry-wizard .wizard-send{background:#071d39}
+.enquiry-wizard .wizard-next:hover,.enquiry-wizard .wizard-send:hover{background:#163b63}
+.bb-text-link{color:#071d39}
+.bb-workflow-card{border-color:#e1e6eb}
+.bb-workflow-art{background:#eff1f4}
+.bb-art-two{background:#f4f1e9}
+.bb-art-three{background:#edf1f2}
+.bb-workflow-copy>span{color:#b27c1e}
+.bb-workflow-strip{background:#f6f8fa;color:#536477}
+.bb-workflow-strip strong{color:#071d39}
+.bb-faq{background:#f6f8fa}
+.bb-faq-items details,.bb-faq-items details:first-child{border-color:#d8dfe5}
+.bb-faq-items summary{color:#071d39}
+.bb-faq-items details[open] summary:after{color:#bd801c}
+footer{background:#071d39}
+footer strong span{color:#e8b858}
+#nav{background:linear-gradient(135deg,rgba(7,29,57,.95),rgba(8,42,76,.91))}
+#nav a.active,#nav a:hover{color:#f4bd58}
+@media(max-width:700px){
+ .hero:before{background:linear-gradient(90deg,rgba(3,19,38,.96),rgba(3,19,38,.78))}
+ .stats .container>div{border-color:#29415c}
+}
