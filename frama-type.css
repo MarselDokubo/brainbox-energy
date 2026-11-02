@@ -150,3 +150,20 @@ html body .enquiry-wizard h3{
  html body .bb-faq-items summary{font-size:16.5px}
  html body .enquiry-wizard .wizard-option{font-size:14px}
 }
+
+/* Header safeguard: nav items are links, not selectable page copy.
+   Prevent the accidental dark text-selection band visible in screenshots. */
+#header #nav{background:transparent;box-shadow:none}
+#header #nav a{
+  background:transparent;
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  text-decoration:none;
+}
+#header #nav a::selection,#header #nav::selection{background:transparent;color:inherit}
+@media(max-width:1120px){
+ #header #nav{background:linear-gradient(135deg,rgba(7,29,57,.95),rgba(8,42,76,.91));box-shadow:none}
+ #header #nav a{color:white}
+ #header #nav a.active{color:#f4bd58}
+}
