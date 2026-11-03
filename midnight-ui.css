@@ -602,3 +602,88 @@ footer.bb-corporate-footer{background:#070b1e;color:#fff}
   .bb-enquiry-shell .wizard-progress{margin-bottom:26px}
   .bb-enquiry-shell .contact-details{grid-template-columns:1fr}
 }
+
+
+/* Contact hotfix: override legacy white split-panel rules that made copy invisible
+   and clipped the left-hand heading in the published layout. */
+html body .section.bb-enquiry-shell,
+html body .section.bb-enquiry-shell .container.modern-contact,
+html body .section.bb-enquiry-shell .modern-contact .contact-intro{
+  background:#16191e !important;
+  background-image:none !important;
+  color:#f7f8fc !important;
+  box-shadow:none !important;
+}
+html body .section.bb-enquiry-shell .container.modern-contact{
+  width:min(1160px,88%) !important;
+  max-width:1160px !important;
+  margin:0 auto !important;
+  padding:0 !important;
+  min-width:0 !important;
+  gap:clamp(40px,6vw,96px) !important;
+  overflow:visible !important;
+}
+html body .section.bb-enquiry-shell .modern-contact .contact-intro{
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+  min-width:0 !important;
+  height:auto !important;
+  padding:18px 0 0 !important;
+  margin:0 !important;
+  overflow:visible !important;
+  border:none !important;
+}
+html body .section.bb-enquiry-shell .modern-contact .contact-intro h1{
+  display:block !important;
+  position:static !important;
+  color:#f7f8fc !important;
+  margin:22px 0 24px !important;
+  max-width:100% !important;
+  overflow:visible !important;
+  font-size:clamp(40px,4vw,62px) !important;
+  line-height:1.1 !important;
+  letter-spacing:-.052em !important;
+  font-weight:500 !important;
+  opacity:1 !important;
+}
+html body .section.bb-enquiry-shell .modern-contact .contact-intro>p{
+  color:#b9c1d1 !important;
+  margin:0 !important;
+  max-width:450px !important;
+  opacity:1 !important;
+}
+html body .section.bb-enquiry-shell .modern-contact .contact-details,
+html body .section.bb-enquiry-shell .modern-contact .contact-details>div{
+  background:transparent !important;
+  color:#cbd3e1 !important;
+  border-color:#353b48 !important;
+}
+html body .section.bb-enquiry-shell .modern-contact .contact-details a,
+html body .section.bb-enquiry-shell .modern-contact .contact-details p{
+  color:#e2e7f2 !important;
+}
+html body .section.bb-enquiry-shell .modern-contact .contact-details span{
+  color:#9cafff !important;
+}
+html body .section.bb-enquiry-shell .modern-contact form.enquiry-wizard{
+  width:100% !important;
+  min-width:0 !important;
+  background:#20232a !important;
+  border:1px solid #343a46 !important;
+  border-radius:12px !important;
+  box-shadow:none !important;
+  padding:clamp(24px,3vw,42px) !important;
+}
+html body .section.bb-enquiry-shell .modern-contact .enquiry-wizard .wizard-progress-meta,
+html body .section.bb-enquiry-shell .modern-contact .enquiry-wizard .wizard-progress-name{
+  color:#c6cde0 !important;
+}
+@media(max-width:900px){
+ html body .section.bb-enquiry-shell .container.modern-contact{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) !important;
+  gap:32px !important;
+ }
+}
