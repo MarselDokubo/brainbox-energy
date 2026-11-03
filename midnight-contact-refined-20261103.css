@@ -756,3 +756,27 @@ html body .bb-enquiry-shell .enquiry-wizard .wizard-step-nodes::before{left:15px
   .bb-feature-section h2.capability-statement-heading{font-size:clamp(29px,7.5vw,43px)}
   .bb-feature-section .capability-statement-heading span{white-space:normal}
 }
+
+/* Force exactly two lines on the homepage capability CTA at desktop width. */
+html body .bb-feature-section .split h2.capability-statement-heading{
+  font-size:clamp(30px,2.85vw,44px) !important;
+  line-height:1.13 !important;
+  letter-spacing:-.045em !important;
+  max-width:100% !important;
+}
+html body .bb-feature-section .split h2.capability-statement-heading span{
+  display:block !important;
+  white-space:nowrap !important;
+  font-size:inherit !important;
+  letter-spacing:inherit !important;
+}
+@media(max-width:760px){
+  html body .bb-feature-section .split h2.capability-statement-heading{
+    font-size:clamp(26px,5vw,36px) !important;
+  }
+}
+@media(max-width:400px){
+  html body .bb-feature-section .split h2.capability-statement-heading span{
+    white-space:normal !important;
+  }
+}
