@@ -379,3 +379,40 @@ footer.bb-corporate-footer{
   .bb-corporate-footer .bb-footer-bottom .bb-footer-inner>div{margin-top:15px}
   .bb-corporate-footer .bb-footer-bottom a:first-child{padding-left:0}
 }
+
+
+/* Footer revision: restore approved midnight-navy visual treatment while
+   preserving the corporate footer's logo, columns and supporting information. */
+footer.bb-corporate-footer{background:#070b1e;color:#fff}
+.bb-corporate-footer .bb-footer-main{padding-top:57px;padding-bottom:52px}
+.bb-corporate-footer .bb-footer-intro{border-bottom-color:#28314c}
+.bb-corporate-footer .bb-footer-intro p{color:#b9c7e1}
+.bb-corporate-footer .bb-footer-group h2{color:#fff}
+.bb-corporate-footer .bb-footer-group a,
+.bb-corporate-footer .bb-footer-group p{color:#c3cfe8}
+.bb-corporate-footer .bb-footer-blue,
+.bb-corporate-footer .bb-footer-support,
+.bb-corporate-footer .bb-footer-bottom{background:#070b1e;color:#fff}
+.bb-corporate-footer .bb-footer-blue .bb-footer-inner{
+  border-top:1px solid #28314c;
+  padding-top:26px;padding-bottom:25px;
+}
+.bb-corporate-footer .bb-footer-blue strong,
+.bb-corporate-footer .bb-footer-support strong{color:#fff}
+.bb-corporate-footer .bb-footer-blue p,
+.bb-corporate-footer .bb-footer-support p{color:#bdc9e0}
+.bb-corporate-footer .bb-footer-outline-link{
+  color:#fff;border-color:#65718d;background:transparent
+}
+.bb-corporate-footer .bb-footer-outline-link:hover{
+  color:#070b1e;background:#fff;border-color:#fff
+}
+.bb-corporate-footer .bb-footer-support .bb-footer-inner{
+  border-top:1px solid #28314c;padding-top:24px;padding-bottom:24px
+}
+.bb-corporate-footer .bb-footer-bottom .bb-footer-inner{
+  border-top:1px solid #35405d;
+  color:#bdc9e0;padding-top:21px;padding-bottom:22px
+}
+.bb-corporate-footer .bb-footer-bottom a{color:#c3cfe8;border-right-color:#465170}
+.bb-corporate-footer .bb-footer-bottom a:hover{color:#fff}
