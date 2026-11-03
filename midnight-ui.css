@@ -256,3 +256,38 @@ footer a:hover{color:#a9aaff}
  mask-image:linear-gradient(90deg,rgba(0,0,0,.52),rgba(0,0,0,.86) 55%,rgba(0,0,0,.70));
 }
 @media(max-width:700px){.page-banner .page-banner-grid{background-size:13px 13px;opacity:.30}}
+
+
+/* Engineering guidance cards — three-tone comparison-inspired treatment */
+.bb-guidance-section .service-grid{gap:14px;align-items:stretch}
+.bb-guidance-section .insight-card{
+  border:1px solid transparent;
+  border-radius:14px;
+  padding:clamp(26px,2.4vw,42px);
+  box-shadow:none;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.bb-guidance-section .insight-card:nth-child(1){
+  background:#e9ecf1;
+  border-color:#e9ecf1;
+}
+.bb-guidance-section .insight-card:nth-child(2){
+  background:#fafafd;
+  border-color:#e9eaf0;
+}
+.bb-guidance-section .insight-card:nth-child(3){
+  background:#183af4;
+  border-color:#183af4;
+  box-shadow:0 6px 20px rgba(24,58,244,.14);
+}
+.bb-guidance-section .insight-card:nth-child(-n+2) h3{color:#151f37}
+.bb-guidance-section .insight-card:nth-child(-n+2) p{color:#48536a}
+.bb-guidance-section .insight-card:nth-child(3) h3,
+.bb-guidance-section .insight-card:nth-child(3) p,
+.bb-guidance-section .insight-card:nth-child(3) .overline{color:#fff}
+.bb-guidance-section .insight-card:nth-child(3) p{color:rgba(255,255,255,.91)}
+.bb-guidance-section .insight-card:nth-child(1) .overline{color:#526079}
+.bb-guidance-section .insight-card:nth-child(2) .overline{color:#314bc8}
+.bb-guidance-section .insight-card:hover{transform:translateY(-3px);border-color:transparent;box-shadow:0 12px 28px rgba(12,23,60,.09)}
+.bb-guidance-section .insight-card:nth-child(3):hover{box-shadow:0 14px 30px rgba(24,58,244,.20)}
+@media(prefers-reduced-motion:reduce){.bb-guidance-section .insight-card{transition:none}.bb-guidance-section .insight-card:hover{transform:none}}
