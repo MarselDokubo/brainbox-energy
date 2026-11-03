@@ -131,7 +131,7 @@ const wizardMarkup=(kind)=>`<form class="enquiry-wizard" id="${kind}-wizard">
  </form>`;
 const enquiryBenefits=()=>`<div class="contact-benefits"><span class="benefits-eyebrow">HOW IT WORKS</span><p>01 — Choose your service<br>02 — Share project details<br>03 — Leave your contact information</p></div>`;
 const contact=()=>`<section class="section bb-enquiry-shell"><div class="container modern-contact">
- <div class="contact-intro">${label('CONTACT US · LET’S CONNECT')}<h1>Let's talk about<br>your project.</h1><p>From maintenance and testing to technical partnerships, tell us what you need. We'll help you take the next step.</p>
+ <div class="contact-intro"><h1>Let's talk about<br>your project.</h1><p>From maintenance and testing to technical partnerships, tell us what you need. We'll help you take the next step.</p>
  <div class="contact-details"><div><span>CALL US</span><a href="tel:+2349163505000">+234 916 350 5000</a></div><div><span>EMAIL US</span><a href="mailto:brainboxenergyservicesltd@gmail.com">brainboxenergyservicesltd@gmail.com</a></div><div><span>VISIT US</span><p>RACAM, Rivers State University, Port Harcourt, Nigeria.</p></div></div></div>
  ${wizardMarkup('contact')}</div></section>`;
 const quote=()=>`<section class="section bb-enquiry-shell"><div class="container modern-contact">
