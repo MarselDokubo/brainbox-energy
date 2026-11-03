@@ -291,3 +291,91 @@ footer a:hover{color:#a9aaff}
 .bb-guidance-cards .insight-card:hover{transform:translateY(-3px);border-color:transparent;box-shadow:0 12px 28px rgba(12,23,60,.09)}
 .bb-guidance-cards .insight-card:nth-child(3):hover{box-shadow:0 14px 30px rgba(24,58,244,.20)}
 @media(prefers-reduced-motion:reduce){.bb-guidance-cards .insight-card{transition:none}.bb-guidance-cards .insight-card:hover{transform:none}}
+
+
+/* Brainbox corporate footer — 2026-11-03. Scoped to leave the site unchanged. */
+footer.bb-corporate-footer{
+  display:block;
+  padding:0;
+  margin:0;
+  background:#1b2029;
+  color:#f5f7fb;
+  font-family:inherit;
+  border:0;
+}
+.bb-corporate-footer *{box-sizing:border-box}
+.bb-corporate-footer .bb-footer-main{
+  width:min(1240px,88%);
+  margin:0 auto;
+  padding:66px 0 72px;
+}
+.bb-corporate-footer .bb-footer-intro{
+  display:flex;align-items:center;justify-content:space-between;gap:40px;
+  padding-bottom:33px;border-bottom:1px solid #363d49;
+}
+.bb-corporate-footer .bb-footer-brand{display:inline-flex;align-items:center;margin:0}
+.bb-corporate-footer .bb-footer-brand img{width:148px;height:auto;max-height:94px;object-fit:contain;display:block}
+.bb-corporate-footer .bb-footer-intro p{
+  max-width:350px;margin:0;color:#c9cfda;font-size:15px;line-height:1.55
+}
+.bb-corporate-footer .bb-footer-columns{
+  display:grid;grid-template-columns:.85fr 1.4fr 1fr 1.3fr;gap:clamp(24px,3vw,55px);
+  padding-top:43px;
+}
+.bb-corporate-footer .bb-footer-group{min-width:0}
+.bb-corporate-footer .bb-footer-group h2{
+  font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:#fff;
+  font-weight:700;line-height:1.45;margin:0 0 25px;
+}
+.bb-corporate-footer .bb-footer-group a,
+.bb-corporate-footer .bb-footer-group p{
+  display:block;font-size:14px;line-height:1.65;color:#c3cad6;
+  font-weight:400;margin:0 0 15px;letter-spacing:0;overflow-wrap:anywhere;
+}
+.bb-corporate-footer .bb-footer-group a:hover,
+.bb-corporate-footer .bb-footer-bottom a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.bb-corporate-footer .bb-footer-inner{width:min(1240px,88%);margin:0 auto}
+.bb-corporate-footer .bb-footer-blue{background:#183af4;color:#fff}
+.bb-corporate-footer .bb-footer-blue .bb-footer-inner{
+  display:flex;gap:38px;align-items:center;justify-content:space-between;padding:27px 0
+}
+.bb-corporate-footer .bb-footer-blue strong,
+.bb-corporate-footer .bb-footer-support strong{font-size:14px;line-height:1.5;font-weight:700}
+.bb-corporate-footer .bb-footer-blue p{font-size:13px;line-height:1.65;color:#fff;max-width:860px;margin:8px 0 0}
+.bb-corporate-footer .bb-footer-outline-link{
+  border:1px solid rgba(255,255,255,.6);border-radius:5px;padding:13px 17px;
+  font-size:13px;font-weight:700;white-space:nowrap;color:#fff;display:inline-flex;gap:16px;align-items:center;margin:0
+}
+.bb-corporate-footer .bb-footer-outline-link:hover{background:#fff;color:#183af4}
+.bb-corporate-footer .bb-footer-support{background:#edf0f4;color:#222c40}
+.bb-corporate-footer .bb-footer-support .bb-footer-inner{padding:25px 0}
+.bb-corporate-footer .bb-footer-support strong{color:#222c40}
+.bb-corporate-footer .bb-footer-support p{max-width:1000px;font-size:13px;line-height:1.7;color:#4d5a6d;margin:7px 0 0}
+.bb-corporate-footer .bb-footer-bottom{background:#fff;color:#4f5b6e}
+.bb-corporate-footer .bb-footer-bottom .bb-footer-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:69px;
+  padding:18px 0;font-size:12px;line-height:1.55
+}
+.bb-corporate-footer .bb-footer-bottom .bb-footer-inner>div{display:flex;flex-wrap:wrap;gap:0}
+.bb-corporate-footer .bb-footer-bottom a{
+  display:inline-block;margin:0;padding:0 15px;color:#36445d;font-size:12px;
+  border-right:1px solid #d2d8e2;line-height:1.5
+}
+.bb-corporate-footer .bb-footer-bottom a:last-child{padding-right:0;border-right:0}
+.bb-corporate-footer .bb-footer-bottom a:hover{color:#183af4}
+@media(max-width:1020px){
+  .bb-corporate-footer .bb-footer-columns{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}
+}
+@media(max-width:640px){
+  .bb-corporate-footer .bb-footer-main{padding:44px 0 46px}
+  .bb-corporate-footer .bb-footer-intro{display:block}
+  .bb-corporate-footer .bb-footer-intro p{margin-top:16px}
+  .bb-corporate-footer .bb-footer-columns{grid-template-columns:1fr;gap:25px;padding-top:32px}
+  .bb-corporate-footer .bb-footer-group h2{margin-bottom:13px}
+  .bb-corporate-footer .bb-footer-group a,.bb-corporate-footer .bb-footer-group p{margin-bottom:10px}
+  .bb-corporate-footer .bb-footer-blue .bb-footer-inner{display:block}
+  .bb-corporate-footer .bb-footer-outline-link{margin-top:19px}
+  .bb-corporate-footer .bb-footer-bottom .bb-footer-inner{display:block}
+  .bb-corporate-footer .bb-footer-bottom .bb-footer-inner>div{margin-top:15px}
+  .bb-corporate-footer .bb-footer-bottom a:first-child{padding-left:0}
+}
