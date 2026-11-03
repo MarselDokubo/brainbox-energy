@@ -130,14 +130,12 @@ const wizardMarkup=(kind)=>`<form class="enquiry-wizard" id="${kind}-wizard">
   <p class="wizard-footnote"><span aria-hidden="true">◇</span> No account needed. We prepare an email draft in your mail app; you choose whether to send it.</p>
  </form>`;
 const enquiryBenefits=()=>`<div class="contact-benefits"><span class="benefits-eyebrow">HOW IT WORKS</span><p>01 — Choose your service<br>02 — Share project details<br>03 — Leave your contact information</p></div>`;
-const contact=()=>`${banner('Contact Us','Have a question or a project in mind? Get in touch with the Brainbox Energy team.')}
-<section class="section bb-enquiry-shell"><div class="container modern-contact">
- <div class="contact-intro">${label('LET’S CONNECT')}<h2>Let's talk about<br>your project.</h2><p>From maintenance and testing to technical partnerships, tell us what you need. We'll help you take the next step.</p>
+const contact=()=>`<section class="section bb-enquiry-shell"><div class="container modern-contact">
+ <div class="contact-intro">${label('CONTACT US · LET’S CONNECT')}<h1>Let's talk about<br>your project.</h1><p>From maintenance and testing to technical partnerships, tell us what you need. We'll help you take the next step.</p>
  <div class="contact-details"><div><span>CALL US</span><a href="tel:+2349163505000">+234 916 350 5000</a></div><div><span>EMAIL US</span><a href="mailto:brainboxenergyservicesltd@gmail.com">brainboxenergyservicesltd@gmail.com</a></div><div><span>VISIT US</span><p>RACAM, Rivers State University, Port Harcourt, Nigeria.</p></div></div></div>
  ${wizardMarkup('contact')}</div></section>`;
-const quote=()=>`${banner('Request a Quote','Share the essentials of your engineering requirement in three simple steps.')}
-<section class="section bb-enquiry-shell"><div class="container modern-contact">
-<div class="contact-intro">${label('ENGINEERING ENQUIRY')}<h2>Tell us what<br>you need.</h2><p>Describe your equipment or project. We'll ask only the questions relevant to your enquiry.</p><div class="card-note"><b>For urgent electrical incidents</b><p>Contact us by phone to discuss response availability. Only qualified personnel should assess or isolate electrical equipment.</p><a href="tel:+2349163505000">+234 916 350 5000</a></div>${enquiryBenefits()}</div>
+const quote=()=>`<section class="section bb-enquiry-shell"><div class="container modern-contact">
+<div class="contact-intro">${label('REQUEST A QUOTE · ENGINEERING ENQUIRY')}<h1>Tell us what<br>you need.</h1><p>Describe your equipment or project. We'll ask only the questions relevant to your enquiry.</p><div class="card-note"><b>For urgent electrical incidents</b><p>Contact us by phone to discuss response availability. Only qualified personnel should assess or isolate electrical equipment.</p><a href="tel:+2349163505000">+234 916 350 5000</a></div></div>
 ${wizardMarkup('quote')}</div></section>`;
 function setupWizard(kind){
  const form=document.getElementById(kind+'-wizard');if(!form)return;
