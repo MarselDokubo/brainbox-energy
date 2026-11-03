@@ -259,35 +259,35 @@ footer a:hover{color:#a9aaff}
 
 
 /* Engineering guidance cards — three-tone comparison-inspired treatment */
-.bb-guidance-section .service-grid{gap:14px;align-items:stretch}
-.bb-guidance-section .insight-card{
+.bb-guidance-cards{gap:14px;align-items:stretch}
+.bb-guidance-cards .insight-card{
   border:1px solid transparent;
   border-radius:14px;
   padding:clamp(26px,2.4vw,42px);
   box-shadow:none;
   transition:transform .2s ease,box-shadow .2s ease;
 }
-.bb-guidance-section .insight-card:nth-child(1){
+.bb-guidance-cards .insight-card:nth-child(1){
   background:#e9ecf1;
   border-color:#e9ecf1;
 }
-.bb-guidance-section .insight-card:nth-child(2){
+.bb-guidance-cards .insight-card:nth-child(2){
   background:#fafafd;
   border-color:#e9eaf0;
 }
-.bb-guidance-section .insight-card:nth-child(3){
+.bb-guidance-cards .insight-card:nth-child(3){
   background:#183af4;
   border-color:#183af4;
   box-shadow:0 6px 20px rgba(24,58,244,.14);
 }
-.bb-guidance-section .insight-card:nth-child(-n+2) h3{color:#151f37}
-.bb-guidance-section .insight-card:nth-child(-n+2) p{color:#48536a}
-.bb-guidance-section .insight-card:nth-child(3) h3,
-.bb-guidance-section .insight-card:nth-child(3) p,
-.bb-guidance-section .insight-card:nth-child(3) .overline{color:#fff}
-.bb-guidance-section .insight-card:nth-child(3) p{color:rgba(255,255,255,.91)}
-.bb-guidance-section .insight-card:nth-child(1) .overline{color:#526079}
-.bb-guidance-section .insight-card:nth-child(2) .overline{color:#314bc8}
-.bb-guidance-section .insight-card:hover{transform:translateY(-3px);border-color:transparent;box-shadow:0 12px 28px rgba(12,23,60,.09)}
-.bb-guidance-section .insight-card:nth-child(3):hover{box-shadow:0 14px 30px rgba(24,58,244,.20)}
-@media(prefers-reduced-motion:reduce){.bb-guidance-section .insight-card{transition:none}.bb-guidance-section .insight-card:hover{transform:none}}
+.bb-guidance-cards .insight-card:nth-child(-n+2) h3{color:#151f37}
+.bb-guidance-cards .insight-card:nth-child(-n+2) p{color:#48536a}
+.bb-guidance-cards .insight-card:nth-child(3) h3,
+.bb-guidance-cards .insight-card:nth-child(3) p,
+.bb-guidance-cards .insight-card:nth-child(3) .overline{color:#fff}
+.bb-guidance-cards .insight-card:nth-child(3) p{color:rgba(255,255,255,.91)}
+.bb-guidance-cards .insight-card:nth-child(1) .overline{color:#526079}
+.bb-guidance-cards .insight-card:nth-child(2) .overline{color:#314bc8}
+.bb-guidance-cards .insight-card:hover{transform:translateY(-3px);border-color:transparent;box-shadow:0 12px 28px rgba(12,23,60,.09)}
+.bb-guidance-cards .insight-card:nth-child(3):hover{box-shadow:0 14px 30px rgba(24,58,244,.20)}
+@media(prefers-reduced-motion:reduce){.bb-guidance-cards .insight-card{transition:none}.bb-guidance-cards .insight-card:hover{transform:none}}
