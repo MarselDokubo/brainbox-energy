@@ -3,12 +3,12 @@ const services=[["Transformer Condition Assessment & Diagnostics","Transformer h
 const gallery=[['profile-0.jpg','Transformer maintenance and testing'],['profile-18.jpg','Electrical field diagnostics'],['profile-13.jpg','Workshop technical briefing'],['profile-19.jpg','Coil winding operations'],['profile-9.jpg','Transformer oil BDV testing equipment'],['profile-22.png','RACAM workshop facility']];
 const newWorkshopGallery=[
 ['workshop-lifting-team.webp','Transformer lifting and handling','Lifting'],
-['workshop-transformer-inspection.webp','Transformer inspection and preparation','Inspection'],
+['workshop-coil-winding.webp','Transformer inspection and preparation','Inspection'],
 ['workshop-oil-filtration-unit.webp','Transformer oil filtration unit','Oil treatment'],
 ['workshop-oil-filtration-equipment.webp','Oil treatment equipment','Oil treatment'],
 ['workshop-heating-operation.webp','Workshop equipment operation','Equipment'],
 ['workshop-inspection-testing.webp','Electrical equipment inspection','Testing'],
-['workshop-coil-winding.webp','Transformer coil winding activity','Winding']
+['workshop-transformer-inspection.webp','Transformer coil winding activity','Winding']
 ];
 const fallbackGallery=[
  ['profile-18.jpg','Electrical field diagnostics','Inspection'],
