@@ -166,6 +166,7 @@ function setupWizard(kind){
 // Technical training content is retained from the supplied colleague-authored training.html.
 const training=()=>`<div class="bb-training">
 <section class="bb-training-hero">
+  <div class="bb-training-hero-grid" aria-hidden="true"></div>
   <div class="bb-training-hero-inner"><div>
     <span class="bb-training-kicker">BRAINBOX TECHNICAL TRAINING</span>
     <h1>Practical skills.<br>Technical confidence.</h1>
