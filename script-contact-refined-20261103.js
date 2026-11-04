@@ -7,7 +7,6 @@ const newWorkshopGallery=[
 ['workshop-oil-filtration-unit.webp','Transformer oil filtration unit','Oil treatment'],
 ['workshop-oil-filtration-equipment.webp','Oil treatment equipment','Oil treatment'],
 ['workshop-heating-operation.webp','Workshop equipment operation','Equipment'],
-['workshop-exciter-and-testing.webp','Transformer testing and technical checks','Testing'],
 ['workshop-inspection-testing.webp','Electrical equipment inspection','Testing'],
 ['workshop-coil-winding.webp','Transformer coil winding activity','Winding']
 ];
