@@ -201,7 +201,7 @@ function setupTrainingForm(){
    ['Training interests / message',d.get('trainingMessage')]
   ];
   const subject=encodeURIComponent('Brainbox Energy — Training Enquiry — '+d.get('trainingPathway'));
-  const body=encodeURIComponent('BRAINBOX ENERGY SERVICES LIMITED — TRAINING ENQUIRY\\n\\n'+fields.map(([k,v])=>k+': '+v).join('\\n'));
+  const body=encodeURIComponent('BRAINBOX ENERGY SERVICES LIMITED — TRAINING ENQUIRY\n\n'+fields.map(([k,v])=>k+': '+v).join('\n'));
   document.getElementById('trainingFormStatus').textContent='Your email application will open with the training enquiry. Please send the prepared email to complete your request.';
   window.location.href='mailto:training@brainboxenergy.com?subject='+subject+'&body='+body;
  });
