@@ -1,0 +1,44 @@
+
+/* Brainbox training route. Scoped to preserve all previously approved pages. */
+.bb-training{background:#f6f7fb;color:#111a32}
+.bb-training *{box-sizing:border-box}
+.bb-training .bb-training-hero{background:#090d26;color:#fff;position:relative;overflow:hidden;padding:88px 24px 82px;background-image:radial-gradient(rgba(143,164,255,.18) .7px,transparent .7px);background-size:10px 10px}
+.bb-training .bb-training-hero-inner{max-width:1080px;margin:auto;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);align-items:center;gap:48px}
+.bb-training .bb-training-kicker{color:#a8b5ff;font-size:12px;font-weight:700;letter-spacing:.14em}
+.bb-training .bb-training-hero h1{font-size:clamp(44px,5.4vw,76px);line-height:1.03;letter-spacing:-.065em;margin:18px 0 24px;color:#fff}
+.bb-training .bb-training-hero p{font-size:18px;line-height:1.7;max-width:570px;color:#d7dff4}
+.bb-training .bb-training-hero-link{display:inline-flex;margin-top:22px;color:#fff;background:#193df7;border-radius:7px;padding:15px 21px;text-decoration:none;font-size:14px;font-weight:700}
+.bb-training .bb-training-hero img{display:block;width:100%;height:355px;object-fit:cover;border-radius:12px}
+.bb-training .bb-training-section{padding:76px 24px 92px}
+.bb-training .container{max-width:1080px;margin:0 auto}
+.bb-training .section-head{max-width:850px;margin-bottom:32px}
+.bb-training .section-head h1{color:#111a32;font-size:clamp(35px,4.5vw,58px);letter-spacing:-.055em;line-height:1.12;margin:12px 0 20px}
+.bb-training .section-head h2{color:#111a32;font-size:clamp(30px,3.3vw,44px);letter-spacing:-.04em;line-height:1.15;margin:0 0 15px}
+.bb-training .section-head p{font-size:17px;line-height:1.7;color:#55647d}
+.bb-training .eyebrow{display:inline-block;font-size:11px;font-weight:750;letter-spacing:.13em;color:#2144f3;text-transform:uppercase}
+.bb-training .training-pathways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:40px 0 78px}
+.bb-training .training-pathway-card{background:#fff;border:1px solid #e3e7f0;border-radius:12px;padding:34px;display:flex;flex-direction:column;align-items:flex-start;box-shadow:0 8px 25px rgba(9,13,38,.03)}
+.bb-training .training-pathway-card h2{font-size:clamp(25px,2.7vw,35px);line-height:1.16;letter-spacing:-.04em;margin:16px 0;color:#111a32}
+.bb-training .training-pathway-card p,.bb-training .training-pathway-card li{color:#53617b;font-size:15px;line-height:1.8}
+.bb-training .training-pathway-card ul{padding-left:20px;margin:10px 0 28px}
+.bb-training .training-pathway-card li{padding-bottom:9px}
+.bb-training .btn-primary{background:#193df7;border:1px solid #193df7;color:#fff;border-radius:7px;display:inline-flex;padding:14px 18px;font-size:13px;font-weight:750;text-decoration:none;cursor:pointer}
+.bb-training .training-pathway-card .btn-primary{margin-top:auto}
+.bb-training .bb-training-form-title{scroll-margin-top:125px}
+.bb-training .training-enquiry-form{background:#fff;border:1px solid #e3e7f0;border-radius:12px;padding:36px;max-width:800px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 20px}
+.bb-training .training-enquiry-form .form-group{min-width:0;display:flex;flex-direction:column}
+.bb-training .training-enquiry-form label{color:#1a2740;font-size:13px;font-weight:700;margin-bottom:8px}
+.bb-training .training-enquiry-form input,.bb-training .training-enquiry-form select,.bb-training .training-enquiry-form textarea{font:inherit;min-height:47px;border:1px solid #d9dfeb;border-radius:7px;padding:11px 13px;background:#f9faff;color:#141d34;width:100%;outline-offset:2px}
+.bb-training .training-enquiry-form textarea{min-height:125px;resize:vertical}
+.bb-training .training-enquiry-form .form-group:has(textarea){grid-column:1/-1}
+.bb-training .training-enquiry-form button{justify-content:center;width:fit-content}
+.bb-training .training-enquiry-form .form-status{grid-column:1/-1;color:#273f77;font-size:13px;line-height:1.6}
+.bb-training .training-note{font-size:13px;color:#6c7990;max-width:800px;line-height:1.7;margin-top:23px}
+@media(max-width:800px){
+.bb-training .bb-training-hero{padding:60px 20px}
+.bb-training .bb-training-hero-inner{grid-template-columns:1fr;gap:26px}
+.bb-training .bb-training-hero img{height:260px}
+.bb-training .bb-training-section{padding:58px 20px}
+.bb-training .training-pathways,.bb-training .training-enquiry-form{grid-template-columns:1fr}
+.bb-training .training-enquiry-form{padding:22px}
+}
