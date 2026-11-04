@@ -162,9 +162,54 @@ function setupWizard(kind){
  form.addEventListener('submit',event=>{event.preventDefault();if(!validPanel())return;mailEnquiry(form,kind==='quote'?'Brainbox Energy — Technical Quote Enquiry':'Brainbox Energy — Website Enquiry');});
  show(0);
 }
-const pages={home,about,services:servicePage,projects,insights,contact,quote};
+
+// Technical training content is retained from the supplied colleague-authored training.html.
+const training=()=>`<div class="bb-training">
+<section class="bb-training-hero">
+  <div class="bb-training-hero-inner"><div>
+    <span class="bb-training-kicker">BRAINBOX TECHNICAL TRAINING</span>
+    <h1>Practical skills.<br>Technical confidence.</h1>
+    <p>Practical engineering training for company teams and individuals working towards competence in transformer repair and maintenance.</p>
+    <a href="#training-enquiry" class="bb-training-hero-link" data-training-scroll>Explore training opportunities ↗</a>
+  </div><img src="assets/workshop-inspection-testing.webp" alt="Engineers wearing protective equipment during transformer testing" loading="eager"></div>
+</section>
+<section class="section bb-training-section"><div class="container"><div class="section-head"><span class="eyebrow">BrainBox Technical Training</span><h1>Practical Engineering Training &amp; Skills Development</h1><p>BrainBox Energy Services Limited provides practical training opportunities for organisations seeking to upskill their workforce and individuals seeking to build technical competence in transformer repair and maintenance.</p></div><div class="training-pathways"><article class="training-pathway-card" id="corporate"><span class="eyebrow">For Companies &amp; Institutions</span><h2>Corporate Training Programmes</h2><p>Designed for organisations that want to strengthen the technical knowledge and practical capabilities of their engineering, operations and maintenance personnel.</p><ul><li>Training in transformer repairs, maintenance and related technical areas.</li><li>Delivery at the BrainBox training facility.</li><li>On-site delivery at the client's own facility.</li><li>Programme scope can be discussed and tailored to the organisation's staff development needs.</li></ul><a class="btn btn-primary" data-training-pathway="Corporate Training Programmes" href="#training-enquiry">Enquire About Corporate Training</a></article><article class="training-pathway-card" id="individual"><span class="eyebrow">For Aspiring Technical Practitioners</span><h2>Two-Year Individual Technical Training</h2><p>A structured, two-year hands-on learning pathway for individuals who want to develop practical skills and experience in transformer repairs, maintenance and related engineering work.</p><ul><li>Two-year training period.</li><li>Practical, hands-on exposure to transformer repair and maintenance activities.</li><li>Learning focused on developing technical competence through sustained participation.</li><li>Suitable for individuals seeking to build a foundation for work in the transformer maintenance field.</li></ul><a class="btn btn-primary" data-training-pathway="Two-Year Individual Technical Training" href="#training-enquiry">Apply for Individual Training</a></article></div><div class="section-head bb-training-form-title" id="training-enquiry"><h2>Training Enquiry &amp; Application</h2><p>Tell us which training pathway interests you. Our team can follow up to discuss the programme and next steps.</p></div><form class="training-enquiry-form" id="trainingEnquiryForm"><div class="form-group"><label for="trainingPathway">Training pathway *</label><select id="trainingPathway" name="trainingPathway" required="required"><option value="">Select a pathway</option><option value="Corporate Training Programmes">Corporate Training Programmes</option><option value="Two-Year Individual Technical Training">Two-Year Individual Technical Training</option></select></div><div class="form-group"><label for="applicantName">Full name *</label><input id="applicantName" name="applicantName" placeholder="Your full name" required="required" type="text"/></div><div class="form-group"><label for="applicantOrganisation">Company / organisation (if applicable)</label><input id="applicantOrganisation" name="applicantOrganisation" placeholder="Company or institution" type="text"/></div><div class="form-group"><label for="applicantEmail">Email address *</label><input id="applicantEmail" name="applicantEmail" placeholder="name@example.com" required="required" type="email"/></div><div class="form-group"><label for="applicantPhone">Telephone number *</label><input id="applicantPhone" name="applicantPhone" placeholder="+234..." required="required" type="tel"/></div><div class="form-group"><label for="trainingLocation">Preferred training location</label><select id="trainingLocation" name="trainingLocation"><option value="">Select preferred location</option><option value="BrainBox training facility">BrainBox training facility</option><option value="Client's facility">Client's facility</option><option value="To be discussed">To be discussed</option></select></div><div class="form-group"><label for="staffCount">Number of staff (corporate enquiries)</label><input id="staffCount" name="staffCount" placeholder="Number of staff to be trained" type="text"/></div><div class="form-group"><label for="trainingMessage">Training interests / message *</label><textarea id="trainingMessage" name="trainingMessage" placeholder="Tell us about your training needs..." required="required" rows="4"></textarea></div><button class="btn btn-primary" type="submit">Submit Training Enquiry</button><div class="form-status" id="trainingFormStatus" role="status"></div></form><p class="training-note">Programme schedules, detailed curriculum, fees, entry requirements and certification arrangements should be confirmed directly with BrainBox before publication.</p></div></section>
+</div>`;
+function setupTrainingForm(){
+ const form=document.getElementById('trainingEnquiryForm');
+ if(!form)return;
+ const pathway=document.getElementById('trainingPathway');
+ document.querySelectorAll('[data-training-pathway], [data-training-scroll]').forEach(link=>{
+  link.addEventListener('click',event=>{
+   event.preventDefault();
+   if(link.dataset.trainingPathway)pathway.value=link.dataset.trainingPathway;
+   document.getElementById('training-enquiry').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+ });
+ form.addEventListener('submit',event=>{
+  event.preventDefault();
+  if(!form.reportValidity())return;
+  const d=new FormData(form);
+  const fields=[
+   ['Training pathway',d.get('trainingPathway')],
+   ['Full name',d.get('applicantName')],
+   ['Organisation',d.get('applicantOrganisation')||'Not provided'],
+   ['Email',d.get('applicantEmail')],
+   ['Telephone',d.get('applicantPhone')],
+   ['Preferred location',d.get('trainingLocation')||'Not specified'],
+   ['Number of staff',d.get('staffCount')||'Not applicable'],
+   ['Training interests / message',d.get('trainingMessage')]
+  ];
+  const subject=encodeURIComponent('Brainbox Energy — Training Enquiry — '+d.get('trainingPathway'));
+  const body=encodeURIComponent('BRAINBOX ENERGY SERVICES LIMITED — TRAINING ENQUIRY\\n\\n'+fields.map(([k,v])=>k+': '+v).join('\\n'));
+  document.getElementById('trainingFormStatus').textContent='Your email application will open with the training enquiry. Please send the prepared email to complete your request.';
+  window.location.href='mailto:training@brainboxenergy.com?subject='+subject+'&body='+body;
+ });
+}
+
+const pages={home,about,services:servicePage,projects,insights,contact,quote,training};
 function mailEnquiry(form,subjectPrefix){const d=new FormData(form);const body=[...d.entries()].filter(([key])=>key!=='consent').map(([key,value])=>key.replaceAll('_',' ').toUpperCase()+': '+value).join('\n');location.href='mailto:brainboxenergyservicesltd@gmail.com?subject='+encodeURIComponent(subjectPrefix)+'&body='+encodeURIComponent(body)}
-function render(){let route=location.hash.slice(1).split('/')[0]||'home';if(!pages[route])route='home';document.getElementById('app').innerHTML=pages[route]();document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+route));document.title=(route==='home'?'Powering Reliability':route==='quote'?'Request a Technical Quote':route[0].toUpperCase()+route.slice(1))+' | Brainbox Energy Services Limited';closeMenu(false);window.scrollTo(0,0);initWorkshopGallery();setupWizard('contact');setupWizard('quote');}
+function render(){let route=location.hash.slice(1).split('/')[0]||'home';if(!pages[route])route='home';document.getElementById('app').innerHTML=pages[route]();document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+route));document.title=(route==='home'?'Powering Reliability':route==='quote'?'Request a Technical Quote':route[0].toUpperCase()+route.slice(1))+' | Brainbox Energy Services Limited';closeMenu(false);window.scrollTo(0,0);initWorkshopGallery();setupWizard('contact');setupWizard('quote');setupTrainingForm();}
 const menuButton=document.getElementById('menu');
 const mobileNav=document.getElementById('nav');
 const header=document.getElementById('header');
