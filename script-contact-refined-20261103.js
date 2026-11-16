@@ -129,10 +129,10 @@ const wizardMarkup=(kind)=>`<form class="enquiry-wizard" id="${kind}-wizard">
 const enquiryBenefits=()=>`<div class="contact-benefits"><span class="benefits-eyebrow">HOW IT WORKS</span><p>01 — Choose your service<br>02 — Share project details<br>03 — Leave your contact information</p></div>`;
 const contact=()=>`<section class="section bb-enquiry-shell"><div class="container modern-contact">
  <div class="contact-intro"><h1>Let's talk about<br>your project.</h1><p>From maintenance and testing to technical partnerships, tell us what you need. We'll help you take the next step.</p>
- <div class="contact-details"><div><span>CALL US</span><a href="tel:+2349163505000">+234 916 350 5000</a></div><div><span>EMAIL US</span><a href="mailto:brainboxenergyservicesltd@gmail.com">brainboxenergyservicesltd@gmail.com</a></div><div><span>VISIT US</span><p>RACAM, Rivers State University, Port Harcourt, Nigeria.</p></div></div></div>
+ <div class="contact-details"><div><span>CALL US</span><a href="tel:+2349167003900">09167003900</a><a href="tel:+2349167004900">0916 700 4900</a></div><div><span>EMAIL US</span><a href="mailto:info@brainboxenergy.com">info@brainboxenergy.com</a></div><div><span>VISIT US</span><p>RACAM, Rivers State University, Port Harcourt, Nigeria.</p></div></div></div>
  ${wizardMarkup('contact')}</div></section>`;
 const quote=()=>`<section class="section bb-enquiry-shell"><div class="container modern-contact">
-<div class="contact-intro">${label('REQUEST A QUOTE · ENGINEERING ENQUIRY')}<h1>Tell us what<br>you need.</h1><p>Describe your equipment or project. We'll ask only the questions relevant to your enquiry.</p><div class="card-note"><b>For urgent electrical incidents</b><p>Contact us by phone to discuss response availability. Only qualified personnel should assess or isolate electrical equipment.</p><a href="tel:+2349163505000">+234 916 350 5000</a></div></div>
+<div class="contact-intro">${label('REQUEST A QUOTE · ENGINEERING ENQUIRY')}<h1>Tell us what<br>you need.</h1><p>Describe your equipment or project. We'll ask only the questions relevant to your enquiry.</p><div class="card-note"><b>For urgent electrical incidents</b><p>Contact us by phone to discuss response availability. Only qualified personnel should assess or isolate electrical equipment.</p><a href="tel:+2349167003900">09167003900</a><a href="tel:+2349167004900">0916 700 4900</a></div></div>
 ${wizardMarkup('quote')}</div></section>`;
 function setupWizard(kind){
  const form=document.getElementById(kind+'-wizard');if(!form)return;
@@ -204,12 +204,12 @@ function setupTrainingForm(){
   const subject=encodeURIComponent('Brainbox Energy — Training Enquiry — '+d.get('trainingPathway'));
   const body=encodeURIComponent('BRAINBOX ENERGY SERVICES LIMITED — TRAINING ENQUIRY\n\n'+fields.map(([k,v])=>k+': '+v).join('\n'));
   document.getElementById('trainingFormStatus').textContent='Your email application will open with the training enquiry. Please send the prepared email to complete your request.';
-  window.location.href='mailto:training@brainboxenergy.com?subject='+subject+'&body='+body;
+  window.location.href='mailto:info@brainboxenergy.com?subject='+subject+'&body='+body;
  });
 }
 
 const pages={home,about,services:servicePage,projects,insights,contact,quote,training};
-function mailEnquiry(form,subjectPrefix){const d=new FormData(form);const body=[...d.entries()].filter(([key])=>key!=='consent').map(([key,value])=>key.replaceAll('_',' ').toUpperCase()+': '+value).join('\n');location.href='mailto:brainboxenergyservicesltd@gmail.com?subject='+encodeURIComponent(subjectPrefix)+'&body='+encodeURIComponent(body)}
+function mailEnquiry(form,subjectPrefix){const d=new FormData(form);const body=[...d.entries()].filter(([key])=>key!=='consent').map(([key,value])=>key.replaceAll('_',' ').toUpperCase()+': '+value).join('\n');location.href='mailto:info@brainboxenergy.com?subject='+encodeURIComponent(subjectPrefix)+'&body='+encodeURIComponent(body)}
 function render(){let route=location.hash.slice(1).split('/')[0]||'home';if(!pages[route])route='home';document.getElementById('app').innerHTML=pages[route]();document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+route));document.title=(route==='home'?'Powering Reliability':route==='quote'?'Request a Technical Quote':route[0].toUpperCase()+route.slice(1))+' | Brainbox Energy Services Limited';closeMenu(false);window.scrollTo(0,0);initWorkshopGallery();setupWizard('contact');setupWizard('quote');setupTrainingForm();}
 const menuButton=document.getElementById('menu');
 const mobileNav=document.getElementById('nav');
